@@ -1,8 +1,8 @@
 # OPF Spreadsheets Preservation Specification
 
-Open Preservation Foundation Spreadsheets Preservation Specification.
+**Draft v1.0, 2023**
 
-**v1.0, 2023**
+**Important:** This version is an unreleased draft version of the specification's first release. Any changes may be added to the specification without changes to versioning or draft status. It will be announced when the draft is ready for release, and any future changes to the specification will happen with versioning.
 
 ## Table of Contents
 
@@ -33,6 +33,12 @@ Open Preservation Foundation Spreadsheets Preservation Specification.
 * [9 Postface](/v1.0/Specification.md#9-postface)
     * [9.1 Authors](/v1.0/Specification.md#91-authors)
     * [9.2 Acknowledgments](/v1.0/Specification.md#92-acknowledgments)
+
+## Participate
+
+You may either:
+* Send a Pull Request (PR) to add changes to the latest in-development version. The PR will undergo review before approval.
+* Create an issue to describe and discuss any changes.
 
 ## Partners
 

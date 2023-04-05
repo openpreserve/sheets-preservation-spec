@@ -36,9 +36,11 @@
 
 This document describes the considerations to make when digitally preserving data created in a spreadsheet file format (i.e. .xlsx, .numbers, .ods).
 
-The document is formalized as a specification to be used in Archival Information Packages (AIP), ideally in parallel with bit preservation of the original data. The migration of data should not be conducted prior to a careful appraisal and technical analysis to ensure data loss is reduced to a minimum and any incurred is acceptable within your organisation.
+The document is formalized as a specification to be used in Archival Information Packages (AIP), ideally in parallel with bit preservation of the original data. The migration of spreadsheet data should not be conducted prior to appraisal and technical analysis to ensure data loss is reduced to a minimum and any incurred is acceptable within your organisation.
 
 The specification should be supported by software tools to automatically process the conversion and validation of spreadsheets to comply with this specification.
+
+This specification is released and maintained by [Open Preservation Foundation](https://openpreservation.org/).
 
 ## 2 Declarations
 
