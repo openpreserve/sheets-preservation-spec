@@ -1,6 +1,8 @@
-# General
+# Part 1: General
 
-Open Preservation Foundation Spreadsheets Preservation Specification v1.0.
+**OPF Spreadsheets Preservation Specification**
+
+**v1.0, 2023**
 
 ## Table of Contents
 

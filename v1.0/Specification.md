@@ -1,6 +1,6 @@
-# General
+# OPF Spreadsheets Preservation Specification
 
-Open Preservation Foundation Spreadsheets Preservation Specification v1.0.
+**v1.0, 2023**
 
 ## Table of Contents
 
@@ -100,7 +100,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_10 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
-## 4.2 Office Open XML SpreadsheetML
+### 4.2 Office Open XML SpreadsheetML
 
 The following table describes the requirements for data quality, when preserving spreadsheets in Office Open XML SpreadsheetML file format.
 
@@ -122,7 +122,7 @@ The following table describes the requirements for data quality, when preserving
 | ODS_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
-## 4.3 Mark-up Languages
+### 4.3 Mark-up Languages
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a text-based mark-up language file format.
 
@@ -138,7 +138,7 @@ The following table describes the requirements for data quality, when preserving
 | CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
 | CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
-## 4.4 Static File Formats
+### 4.4 Static File Formats
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a static file format.
 
@@ -186,7 +186,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | ODS_10 | Metadata in the file property information and “meta.xml” such as author, title, category and user defined properties etc. can be misleading if i.e. the document was reused as a template. User defined custom properties may be created and stored in “meta.xml”.<br><br>You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 | ODS_11 | Cell hyperlinks are in essence unproblematic to keep in a spreadsheet, but your organisation may want to remove cell hyperlinks, since they reference external information.<br><br>Cell hyperlinks may be opened using an internet archive, if the cell hyperlinks are no longer active.<br><br>Broken (unavailable URL) cell hyperlinks may be checked for upon ingest and reported.<br><br>Cell hyperlinks can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 
-## 5.2 Office Open XML SpreadsheetML
+### 5.2 Office Open XML SpreadsheetML
 
 The following table gives guidelines for how to comply with the requirements in section 4.2.
 
@@ -208,7 +208,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | OOXML_12 | Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 | OOXML_13 | Cell hyperlinks are in essence unproblematic to keep in a spreadsheet, but your organisation may want to remove cell hyperlinks, since they reference external information.<br><br>Cell hyperlinks may be opened using an internet archive, if the cell hyperlinks are no longer active.<br><br>Broken (unavailable URL) cell hyperlinks may be checked for upon ingest and reported.<br><br>Cell hyperlinks can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 
-## 5.3 Mark-up Languages
+### 5.3 Mark-up Languages
 
 The following table gives guidelines for how to comply with the requirements in section 4.3.
 
@@ -221,7 +221,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | CSV_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. The name of the sheet must be given “Sheet1.csv”, “Sheet2.csv” etc. |
 | CSV_4 | The file format of the graphical material should be any appropriate image file format, your organisation already has a file format policy for, or a new file format policy should be created. |
 
-## 5.4 Static File Formats
+### 5.4 Static File Formats
 
  The following table gives guidelines for how to comply with the requirements in section 4.4.
 
