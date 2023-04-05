@@ -1,8 +1,8 @@
 # File Format Policies
 
 ## Table of Contents
-[1 Introduction](#1-introduction)
-[2 Policies](#2-policies)
+* [1 Introduction](#1-introduction)
+* [2 Policies](#2-policies)
     * [2.1 OpenDocument Spreadsheets](#21-opendocument-spreadsheets)
     * [2.2 OfficeOpen XML SpreadsheetML](#22-office-open-xml-spreadsheetml)
     * [2.3 Mark-up Languages](#23-mark-up-languages)
@@ -33,7 +33,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_1 | Password protection | The file **MUST NOT** have read or write password protection. |
 | ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”. |
 | ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
-| ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. Hyperlinks are exempt. |
+| ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
 | ODS_5 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
 | ODS_6 | Cell values | The file **SHOULD** have cell values or objects. |
 | ODS_7 | Macros | The file **SHOULD NOT** have any macros. |
@@ -53,7 +53,7 @@ The following table describes the requirements for data quality, when preserving
 | ODS_2 | Standard compliance | The file **MUST** comply with the standard “ISO/IEC 29500 Office Open XML File Formats”. |
 | ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
 | ODS_4 | Conformance | The file **SHOULD** comply with “strict” conformance class. |
-| ODS_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. Hyperlinks are exempt. |
+| ODS_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
 | ODS_6 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
 | ODS_7 | Cell values | The file **SHOULD** have cell values or objects. |
 | ODS_8 | Macros | The file **SHOULD NOT** have any macros. |

@@ -1,8 +1,8 @@
 # Example Spreadsheets Software
 
 ## Table of Contents
-[1 Introduction](#1-introduction)
-[2 Lists of Example Software](#2-lists-of-example-software)
+* [1 Introduction](#1-introduction)
+* [2 Lists of Example Software](#2-lists-of-example-software)
     * [2.1 Manual XML Editing](#21-manual-xml-editing)
     * [2.2 Programmatic conversion and data manipulation](#22-programmatic-conversion-and-data-manipulation)
     * [2.3 Comparison](#23-comparison)
