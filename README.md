@@ -1,11 +1,13 @@
 # OPF Spreadsheets Preservation Specification
+
 Open Preservation Foundation Spreadsheets Preservation Specification.
 
-v1.0, 2023
+**v1.0, 2023**
 
 ## Table of Contents
 
 **Chapter One**
+
 * [General](/v1.0/General.md)
     * [1 Introduction](/v1.0/General.md#1-introduction)
     * [2 Declarations](/v1.0/General.md#2-declarations)
@@ -13,13 +15,14 @@ v1.0, 2023
         * [2.2 Scope](/v1.0/General.md#22-scope)
         * [2.3 Licence](/v1.0/General.md#23-licence)
     * [3 Appraisal and Migration Paths](/v1.0/General.md#3-appraisal-and-migration-paths)
-    * [4 Postface](/v1.0/General.md#4-postface)
-        * [4.1 Authors](/v1.0/General.md#41-authors)
-        * [4.2 Acknowledgments](/v1.0/General.md#42-acknowledgments)
-    * [Glossary]()
+    * [4 Glossary](/v1.0/General.md#4-glossary)
     * [5 References](/v1.0/General.md#5-references)
+    * [6 Postface](/v1.0/General.md#6-postface)
+        * [6.1 Authors](/v1.0/General.md#61-authors)
+        * [6.2 Acknowledgments](/v1.0/General.md#62-acknowledgments)
 
 **Chapter Two**
+
 * [File Format Policies](/v1.0/File%20Format%20Policies.md)
     * [1 Introduction](/v1.0/File%20Format%20Policies.md#1-introduction)
     * [2 Policies](/v1.0/File%20Format%20Policies.md#2-policies)
@@ -29,16 +32,27 @@ v1.0, 2023
         * [2.4 Static file formats](/v1.0/File%20Format%20Policies.md#24-static-file-formats)
 
 **Chapter Three**
+
 * [Guidelines for File Format Policies Compliance](/v1.0/Guidelines.md)
-    * [1 Introduction]()
-    * [2 Guidelines]()
+    * [1 Introduction](/v1.0/Guidelines.md#1-introduction)
+    * [2 Guidelines](/v1.0/Guidelines.md#2-guidelines)
+        * [2.1 OpenDocument Spreadsheets](/v1.0/Guidelines.md#21-opendocument-spreadsheets)
+        * [2.2 OfficeOpen XML SpreadsheetML](/v1.0/Guidelines.md#22-office-open-xml-spreadsheetml)
+        * [2.3 Mark-up Languages](/v1.0/Guidelines.md#23-mark-up-languages)
+        * [2.4 Static file formats](/v1.0/Guidelines.md#24-static-file-formats)
 
 **Chapter Four**
+
 * [Example Spreadsheets Software](/v1.0/Example%20Software.md)
-    * [1 Introduction]()
-    * [2 Example Software]()
+    * [1 Introduction](/v1.0/Example%20Software.md#1-introduction)
+    * [2 Example Software](/v1.0/Example%20Software.md#2-example-software)
+        * [2.1 OpenDocument Spreadsheets](/v1.0/Example%20Software.md#21-opendocument-spreadsheets)
+        * [2.2 OfficeOpen XML SpreadsheetML](/v1.0/Example%20Software.md#22-officeopen-xml-spreadsheetml)
+        * [2.3 Mark-up Languages](/v1.0/Example%20Software.md#23-mark-up-languages)
+        * [2.4 Static file formats](/v1.0/Example%20Software.md#24-static-file-formats)
 
 ## Partners
+
 * Danish National Archives
 * National Archives of the Netherlands
 * National Archives of Estonia

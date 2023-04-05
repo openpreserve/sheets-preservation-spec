@@ -80,8 +80,7 @@ Table with terms used in the specification.
 | Sheets | A spreadsheet must contain at least one sheet but may contain a large number of sheets. Sheets are the “pages” of a spreadsheet, and any cell exists in a sheet. Sheets are the structural wrapper of spreadsheet data. |
 | Significant properties | Significant properties are the properties of data, which a designated community has deemed important to preserve for future reuse of data. A significant property is also termed a “Transformational Information Property” in the OAIS. |
 | Static file format | A static file format is typically an image file format or the PDF file format, which editable files are converted to. This may result in loss of significant properties and hence data quality. |
-| Validation | Validation is the act of confirming something, and in this context a spreadsheet, conforms to the regulations specified in a document, typically referred to as a standard. Validation results in either an approval or a disapproval of any data property or attribute according to a chosen conformance level.  
-Validation processes should be supported by software to automate the process, but validation may involve manual inspection of the data. |
+| Validation | Validation is the act of confirming something, and in this context a spreadsheet, conforms to the regulations specified in a document, typically referred to as a standard. Validation results in either an approval or a disapproval of any data property or attribute according to a chosen conformance level.<br>Validation processes should be supported by software to automate the process, but validation may involve manual inspection of the data. |
 
 ## 5 References
 
