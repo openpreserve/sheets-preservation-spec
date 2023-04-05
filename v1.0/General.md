@@ -4,13 +4,13 @@ Open Preservation Foundation Spreadsheets Preservation Specification v1.0.
 ## Table of Contents
 [1 Introduction](#1-introduction)
 [2 Declarations](#2-declarations)
-    [2.1 Aim](#21-aim)
-    [2.2 Scope](#22-scope)
-    [2.3 Licence](#23-licence)
+    * [2.1 Aim](#21-aim)
+    * [2.2 Scope](#22-scope)
+    * [2.3 Licence](#23-licence)
 [3 Appraisal and Migration Paths](#3-appraisal-and-migration-paths)
 [4 Postface](#4-postface)
-    [4.1 Authors](#41-authors)
-    [4.2 Acknowledgments](#42-acknowledgments)
+    * [4.1 Authors](#41-authors)
+    * [4.2 Acknowledgments](#42-acknowledgments)
 [5 References](#5-references)
 
 ## 1 Introduction

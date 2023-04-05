@@ -3,11 +3,11 @@
 ## Table of Contents
 [1 Introduction](#1-introduction)
 [2 Lists of Example Software](#2-lists-of-example-software)
-    [2.1 Manual XML Editing](#21-manual-xml-editing)
-    [2.2 Programmatic conversion and data manipulation](#22-programmatic-conversion-and-data-manipulation)
-    [2.3 Comparison](#23-comparison)
-    [2.4 Validation](#24-validation)
-    [2.5 Editing and rendering](#25-editing-and-rendering)
+    * [2.1 Manual XML Editing](#21-manual-xml-editing)
+    * [2.2 Programmatic conversion and data manipulation](#22-programmatic-conversion-and-data-manipulation)
+    * [2.3 Comparison](#23-comparison)
+    * [2.4 Validation](#24-validation)
+    * [2.5 Editing and rendering](#25-editing-and-rendering)
 
 ## 1 Introduction
 This document accompanies the OPF Spreadsheets Preservation Specification v1.0. 
@@ -29,7 +29,8 @@ The document should not be viewed as an endorsement or recommendation of the sof
 The following sections provide tables of example software covering different purposes.
 
 ### 2.1 Manual XML editing
-Table 1. List of software for manual editing of spreadsheets.
+
+**Table 1. List of software for manual editing of spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -37,7 +38,8 @@ Table 1. List of software for manual editing of spreadsheets.
 | OOXML Viewer | Visual Studio Code extension | Linux, macOS, Windows | MIT |
 
 ### 2.2 Programmatic conversion and data manipulation
-Table 2. List of software for programmatic conversion and data manipulation of spreadsheets.
+
+**Table 2. List of software for programmatic conversion and data manipulation of spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -57,7 +59,8 @@ Table 2. List of software for programmatic conversion and data manipulation of s
 | Syncfusion | **Input/Output:** CSV, Excel 2003, JSON, TSV, XLS, XLT, XLSM, XLSX, XLTM and XLTX **Output only:** BMP, HTML, JPEG, ODS, PDF and PNG | .Net | Commercial |
 
 ### 2.3 Comparison
-Table 3. List of software for comparing spreadsheets.
+
+**Table 3. List of software for comparing spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -69,7 +72,8 @@ Table 3. List of software for comparing spreadsheets.
 | XL Comparator | Compare the content of specific columns of two spreadsheet files (Excel and CSV) online. | Browser | Free to use |
 
 ### 2.4 Validation
-Table 4. List of software for validating spreadsheets.
+
+**Table 4. List of software for validating spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -80,7 +84,8 @@ Table 4. List of software for validating spreadsheets.
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
 ### 2.5 Editing and rendering
-Table 5. List of software for editing and rendering spreadsheets.
+
+**Table 5. List of software for editing and rendering spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
