@@ -96,7 +96,7 @@ The following table describes the requirements for data quality, when preserving
 | ID | Name | Description |
 | --- | --- | --- |
 | STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
-| STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”/li></ul> |
+| STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
 | STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
 | STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
 | STATIC_5 | Formulas | The spreadsheet **MUST** have any formulas printed to a static file named “Data”. |

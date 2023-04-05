@@ -46,20 +46,20 @@ The following sections provide tables of example software covering different pur
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
-| Aspose.Cells | **Input/Output:** CSV, HTML, MHTML, NUMBERS, ODS, TSV, XLS, XLSB, XLSM, XLSX, XLT, XLTM, XLTX and XML **Output only:** BMP, DIF, EMF, GIF, JPEG, PDF, PDF/A, PNG, SVG, TIFF and XPS | Android via Java, C++, Java, .Net, Node.js. PHP, Python | Commercial |
+| Aspose.Cells | **Input/Output:** CSV, HTML, MHTML, NUMBERS, ODS, TSV, XLS, XLSB, XLSM, XLSX, XLT, XLTM, XLTX and XML<br><br>**Output only:** BMP, DIF, EMF, GIF, JPEG, PDF, PDF/A, PNG, SVG, TIFF and XPS | Android via Java, C++, Java, .Net, Node.js. PHP, Python | Commercial |
 | Apache POI | **Input/Output:** XLA, XLS, XLT, XLAM, XLSM, XLSX, XLTM and XLTX | Java | Apache 2.0 |
 | ClosedXML | **Input/Output:** XLAM, XLSM, XLSX, XLTM and XLTX | .Net | MIT |
-| docx4j | **Input/Output:** XHTML, XLSX **Output only:** PDF | Java | Apache 2.0 |
+| docx4j | **Input/Output:** XHTML, XLSX<br><br>**Output only:** PDF | Java | Apache 2.0 |
 | Excel Interop | **Input/Output:** CSV, HTML, ODS, XLA, XLS, XLT, XLAM, XLSM, XLSX, XLTM and XLTX | .Net | Proprietary |
 | Excelize | **Input/Output:** XLAM, XLSM, XLSX, XLTM and XLTX | Go | BSD-3-Clause |
-| EPPlus | **Input/Output:** XLSX and XLSM **Output only:** HTML and JSON | .Net | Commercial |
-| GemBox | **Input/Output:** XLS, XLSX, XLSB, XLSM, XLTX, ODS CSV, TXT, HTML and MHTML **Output only:** PDF, XPS, PNG, JPEG, GIF, BMP, TIFF and WMP | .Net | Commercial |
+| EPPlus | **Input/Output:** XLSX and XLSM<br>**Output only:** HTML and JSON | .Net | Commercial |
+| GemBox | **Input/Output:** XLS, XLSX, XLSB, XLSM, XLTX, ODS CSV, TXT, HTML and MHTML<br>**Output only:** PDF, XPS, PNG, JPEG, GIF, BMP, TIFF and WMP | .Net | Commercial |
 | NPOI | **Input/Output:** XLS and XLSX | .Net | Apache 2.0 |
 | ODF Toolkit | **Input/Output:** FODS, ODS and OTS | Java | Apache 2.0 |
 | Open XML SDK | **Input/Output:** XLAM, XLSM, XLSX, XLTM and XLTX | .Net | MIT |
-| PhpSpreadsheet | **Input/Output:** ODS, XLS (BIFF 8) and XLSX **Input only:** XLS (BIFF 5), Excel 2003, Gnumeric and SYLK **Output only:** PDF | PHP | MIT |
-| Spire.XLS | **Input/Output:** CSV, HTML, ODS, XLS, XLSB, XLSM, XLSX **Output only:** JPEG, OFD, PDF, PNG, PostScript, SVG, TXT, XML, UOS, XPS | Android via Java, C++, Java, .Net | Commercial |
-| Syncfusion | **Input/Output:** CSV, Excel 2003, JSON, TSV, XLS, XLT, XLSM, XLSX, XLTM and XLTX **Output only:** BMP, HTML, JPEG, ODS, PDF and PNG | .Net | Commercial |
+| PhpSpreadsheet | **Input/Output:** ODS, XLS (BIFF 8) and XLSX<br>**Input only:** XLS (BIFF 5), Excel 2003, Gnumeric and SYLK<br>**Output only:** PDF | PHP | MIT |
+| Spire.XLS | **Input/Output:** CSV, HTML, ODS, XLS, XLSB, XLSM, XLSX<br>**Output only:** JPEG, OFD, PDF, PNG, PostScript, SVG, TXT, XML, UOS, XPS | Android via Java, C++, Java, .Net | Commercial |
+| Syncfusion | **Input/Output:** CSV, Excel 2003, JSON, TSV, XLS, XLT, XLSM, XLSX, XLTM and XLTX<br>**Output only:** BMP, HTML, JPEG, ODS, PDF and PNG | .Net | Commercial |
 
 ### 2.3 Comparison
 
