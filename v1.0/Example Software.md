@@ -1,6 +1,7 @@
 # Example Spreadsheets Software
 
 ## Table of Contents
+
 * [1 Introduction](#1-introduction)
 * [2 Lists of Example Software](#2-lists-of-example-software)
     * [2.1 Manual XML Editing](#21-manual-xml-editing)
@@ -10,6 +11,7 @@
     * [2.5 Editing and rendering](#25-editing-and-rendering)
 
 ## 1 Introduction
+
 This document accompanies the OPF Spreadsheets Preservation Specification v1.0. 
 
 This document is a collation of existing, example software for
@@ -26,6 +28,7 @@ The document of example software are subject to obsolescence according to softwa
 The document should not be viewed as an endorsement or recommendation of the software. The document is a means for you to identify possible ways of complying with this specification using tools to support your work.
 
 ## 2 Lists of Example Software
+
 The following sections provide tables of example software covering different purposes.
 
 ### 2.1 Manual XML editing

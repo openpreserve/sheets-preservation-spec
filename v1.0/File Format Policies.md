@@ -1,6 +1,7 @@
 # File Format Policies
 
 ## Table of Contents
+
 * [1 Introduction](#1-introduction)
 * [2 Policies](#2-policies)
     * [2.1 OpenDocument Spreadsheets](#21-opendocument-spreadsheets)
@@ -9,6 +10,7 @@
     * [2.4 Static file formats](#24-static-file-formats)
 
 ## 1 Introduction
+
 Each file format policy has a table with:
 * ID is a unique identifier for the requirement
 * Name is a short title for the requirement
@@ -21,9 +23,11 @@ The file format policies must be validated in accordance with the following leve
 * INFO is equal to **MAY** conformance
 
 ## 2 Policies
+
 The following subsections cover each file format policy.
 
 ### 2.1 OpenDocument Spreadsheets
+
 The following table describes the requirements for data quality when preserving spreadsheets in OpenDocument Spreadsheets file format.
 
 **Table 1. OpenDocument Spreadsheets requirements**
@@ -43,6 +47,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
 ## 2.2 Office Open XML SpreadsheetML
+
 The following table describes the requirements for data quality, when preserving spreadsheets in Office Open XML SpreadsheetML file format.
 
 **Table 2. Office Open XML SpreadsheetML requirements**
@@ -64,6 +69,7 @@ The following table describes the requirements for data quality, when preserving
 | ODS_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
 ## 2.3 Mark-up languages
+
 The following table describes the requirements for data quality, when preserving spreadsheets in a text-based mark-up language file format.
 
 ***Be aware!***
@@ -79,6 +85,7 @@ The following table describes the requirements for data quality, when preserving
 | CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
 ## 2.4 Static file formats
+
 The following table describes the requirements for data quality, when preserving spreadsheets in a static file format.
 
 ***Be aware!***
@@ -88,12 +95,12 @@ The following table describes the requirements for data quality, when preserving
 
 | ID | Name | Description |
 | --- | --- | --- |
-| STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.
+| STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.  
 * JPEG-2000
 * PDF/A
 * PNG
 * TIFF |
-| STATIC_2 | Extension | The file **MUST** have one of these extensions.
+| STATIC_2 | Extension | The file **MUST** have one of these extensions.  
 * “.jp2”
 * “.pdf”
 * “.png”
