@@ -9,7 +9,7 @@ Open Preservation Foundation Spreadsheets Preservation Specification.
 **Chapter One**
 
 * [General](/v1.0/General.md)
-    * [1 Introduction](./v1.0/General.md#1-introduction)
+    * [1 Introduction](/v1.0/General.md#1-introduction)
     * [2 Declarations](/v1.0/General.md#2-declarations)
         * [2.1 Aim](/v1.0/General.md#21-aim)
         * [2.2 Scope](/v1.0/General.md#22-scope)
