@@ -4,6 +4,8 @@
 
 **Important:** This version is an unreleased draft version of the specification's first release. Any changes may be added to the specification without changes to versioning or draft status. It will be announced when the draft is ready for release, and any future changes to the specification will happen with versioning.
 
+**TLDR:** This document describes how to preserve a spreadsheet file to enable access to the data at a later stage. The document is released and maintained by Open Preservation Foundation.
+
 ## Table of Contents
 
 * [1 Introduction](/v1.0/Specification.md#1-introduction)
@@ -38,9 +40,10 @@
 
 You may either:
 * Send a Pull Request (PR) to add changes to the latest in-development version. The PR will undergo review before approval.
-* Create an issue to describe and discuss any changes.
+* Create an [issue](https://github.com/Asbjoedt/Spreadsheets-Preservation-Specification/issues) to describe and discuss any changes.
 
 ## Partners
+The following organisations are strategic partners, benefactors and co-creators in the creation of this specification and the OPF ODF Validator.
 
 * Danish National Archives
 * National Archives of the Netherlands
