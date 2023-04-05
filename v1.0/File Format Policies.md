@@ -7,7 +7,7 @@
     * [2.1 OpenDocument Spreadsheets](#21-opendocument-spreadsheets)
     * [2.2 OfficeOpen XML SpreadsheetML](#22-office-open-xml-spreadsheetml)
     * [2.3 Mark-up Languages](#23-mark-up-languages)
-    * [2.4 Static file formats](#24-static-file-formats)
+    * [2.4 Static File Formats](#24-static-file-formats)
 
 ## 1 Introduction
 
@@ -68,7 +68,7 @@ The following table describes the requirements for data quality, when preserving
 | ODS_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
-## 2.3 Mark-up languages
+## 2.3 Mark-up Languages
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a text-based mark-up language file format.
 
@@ -84,7 +84,7 @@ The following table describes the requirements for data quality, when preserving
 | CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
 | CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
-## 2.4 Static file formats
+## 2.4 Static File Formats
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a static file format.
 
@@ -95,8 +95,8 @@ The following table describes the requirements for data quality, when preserving
 
 | ID | Name | Description |
 | --- | --- | --- |
-| STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.  <br><br>* JPEG-2000<br>* PDF/A<br><br>* PNG<br><br>* TIFF |
-| STATIC_2 | Extension | The file **MUST** have one of these extensions.  <br><br>* “.jp2”<br><br>* “.pdf”<br><br>* “.png”<br><br>* “.tif” or “.tiff” |
+| STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
+| STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”/li></ul> |
 | STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
 | STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
 | STATIC_5 | Formulas | The spreadsheet **MUST** have any formulas printed to a static file named “Data”. |

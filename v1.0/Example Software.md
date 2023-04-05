@@ -3,12 +3,12 @@
 ## Table of Contents
 
 * [1 Introduction](#1-introduction)
-* [2 Lists of Example Software](#2-lists-of-example-software)
+* [2 Lists of Example Software](#2-example-software)
     * [2.1 Manual XML Editing](#21-manual-xml-editing)
-    * [2.2 Programmatic conversion and data manipulation](#22-programmatic-conversion-and-data-manipulation)
+    * [2.2 Programmatic Conversion and Data Manipulation](#22-programmatic-conversion-and-data-manipulation)
     * [2.3 Comparison](#23-comparison)
     * [2.4 Validation](#24-validation)
-    * [2.5 Editing and rendering](#25-editing-and-rendering)
+    * [2.5 Editing and Rendering](#25-editing-and-rendering)
 
 ## 1 Introduction
 
@@ -27,11 +27,11 @@ The document of example software are subject to obsolescence according to softwa
 
 The document should not be viewed as an endorsement or recommendation of the software. The document is a means for you to identify possible ways of complying with this specification using tools to support your work.
 
-## 2 Lists of Example Software
+## 2 Example Software
 
 The following sections provide tables of example software covering different purposes.
 
-### 2.1 Manual XML editing
+### 2.1 Manual XML Editing
 
 **Table 1. List of software for manual editing of spreadsheets.**
 
@@ -40,9 +40,9 @@ The following sections provide tables of example software covering different pur
 | OOXML Tools | Chrome extension | Chrome | Free to use |
 | OOXML Viewer | Visual Studio Code extension | Linux, macOS, Windows | MIT |
 
-### 2.2 Programmatic conversion and data manipulation
+### 2.2 Programmatic Conversion and Data Manipulation
 
-**Table 2. List of software for programmatic conversion and data manipulation of spreadsheets.**
+**Table 2. Software for programmatic conversion and data manipulation of spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -63,7 +63,7 @@ The following sections provide tables of example software covering different pur
 
 ### 2.3 Comparison
 
-**Table 3. List of software for comparing spreadsheets.**
+**Table 3. Software for comparing spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -76,7 +76,7 @@ The following sections provide tables of example software covering different pur
 
 ### 2.4 Validation
 
-**Table 4. List of software for validating spreadsheets.**
+**Table 4. Software for validating spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -86,9 +86,9 @@ The following sections provide tables of example software covering different pur
 | OOXML Validator | Both a Visual Studio Code extension and a CLI tool is available. | Linux, macOS, Windows | MIT |
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
-### 2.5 Editing and rendering
+### 2.5 Editing and Rendering
 
-**Table 5. List of software for editing and rendering spreadsheets.**
+**Table 5. Software for editing and rendering spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
