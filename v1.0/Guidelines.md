@@ -19,7 +19,7 @@ Each file format policy has a guideline with a table containing:
 
 The following subsections go through each guideline and at the end has a section on considerations related to appraisal and migration paths for spreadsheets.
 
-# 2 Guidelines
+## 2 Guidelines
 
 ### 2.1 OpenDocument Spreadsheets
 
@@ -88,6 +88,6 @@ The following table gives guidelines for how to comply with the requirements in 
 | STATIC_2 | Extension should be lowercase. |
 | STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. It is up to your organisation to determine if sheets should be split into multiple export files, or if you combine them into a single multipage file. When using a single multipage file, each page must have the name of the sheet in it. This specification does not recommend one approach over the other, and if your organisation does not have any preference, you may allow both approaches. |
 | STATIC_4 | Before exporting, you must applying text wrapping to all cells of the sheet, otherwise truncated cells with information will result in information loss, since this information will be hidden behind the proceeding column’s cell, if this cell contains information. |
-| STATIC_5 | The new static file representation of the formulas should have three columns with the following information:<br><br>* Column 1: Sheet name<br><br>* Column 2: Cell reference<br><br>* Column 3: Formula<br><br>The first three cells of the first row should be filled with strings “Sheet names”, “Cell reference” and “Formulas”.<br><br>
+| STATIC_5 | The new static file representation of the formulas should have three columns with the following information:<ul><li>Column 1: Sheet name</li><li>Column 2: Cell reference</li><li>Column 3: Formula</li></ul><br><br>The first three cells of the first row should be filled with strings “Sheet names”, “Cell reference” and “Formulas”.<br><br>
 If STATIC_5 is relevant, columns 1 and 2 may be shared. |
 | STATIC_6 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_4 and have a fourth column appended with the following information:<br><br>* Column 4: Cell hyperlink<br><br>The fourth cell of the first row should be filled with the string “Cell hyperlinks”. |
