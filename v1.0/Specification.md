@@ -268,10 +268,10 @@ The following sub sections provide tables of example software covering different
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
-| Aspose.Cells | **Input/Output:** CSV, HTML, MHTML, NUMBERS, ODS, TSV, XLS, XLSB, XLSM, XLSX, XLT, XLTM, XLTX and XML<br><br>**Output only:** BMP, DIF, EMF, GIF, JPEG, PDF, PDF/A, PNG, SVG, TIFF and XPS | Android via Java, C++, Java, .Net, Node.js. PHP, Python | Commercial |
+| Aspose.Cells | **Input/Output:** CSV, HTML, MHTML, NUMBERS, ODS, TSV, XLS, XLSB, XLSM, XLSX, XLT, XLTM, XLTX and XML<br>**Output only:** BMP, DIF, EMF, GIF, JPEG, PDF, PDF/A, PNG, SVG, TIFF and XPS | Android via Java, C++, Java, .Net, Node.js. PHP, Python | Commercial |
 | Apache POI | **Input/Output:** XLA, XLS, XLT, XLAM, XLSM, XLSX, XLTM and XLTX | Java | Apache 2.0 |
 | ClosedXML | **Input/Output:** XLAM, XLSM, XLSX, XLTM and XLTX | .Net | MIT |
-| docx4j | **Input/Output:** XHTML, XLSX<br><br>**Output only:** PDF | Java | Apache 2.0 |
+| docx4j | **Input/Output:** XHTML, XLSX<br>**Output only:** PDF | Java | Apache 2.0 |
 | Excel Interop | **Input/Output:** CSV, HTML, ODS, XLA, XLS, XLT, XLAM, XLSM, XLSX, XLTM and XLTX | .Net | Proprietary |
 | Excelize | **Input/Output:** XLAM, XLSM, XLSX, XLTM and XLTX | Go | BSD-3-Clause |
 | EPPlus | **Input/Output:** XLSX and XLSM<br>**Output only:** HTML and JSON | .Net | Commercial |
@@ -317,7 +317,7 @@ The following sub sections provide tables of example software covering different
 | Apache OpenOffice Calc | The application uses OpenDocument by default but you can also open and edit Excel file formats and Apple NUMBERS. | Linux, macOS, Windows | Free to use |
 | Apple Numbers | The application uses its own file format NUMBERS by default but you can also open and edit Excel file formats. | Browser, macOS | Commercial |
 | Aspose.Cells | An online platform for editing viewing and many other features. | Browser | Free to use |
-| Calligra Sheets |  | Linux macOS, WIndows | GPL-2.0 |
+| Calligra Sheets | The application uses OpenDocument by default but you can also open and edit Excel and several other file formats. | Linux macOS, WIndows | GPL-2.0 |
 | Gnumeric | The application uses its own file format Gnumeric XML by default but you can also open and edit Excel file formats and OpenDocument. | Linux, Windows | GPL-2.0 or GPL-3.0 |
 | LibreOffice Calc | The application uses OpenDocument by default but you can also open and edit Excel file formats and Apple NUMBERS. | Linux, macOS, Windows | Mozilla Public 2.0 |
 | Microsoft Excel | The application uses Office Open XML file formats by default but you can also open and edit OpenDocument file formats. | Browser, macOS, Windows | Commercial |

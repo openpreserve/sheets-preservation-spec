@@ -40,9 +40,10 @@
 
 ## Participate
 
-You may either:
-* Send a Pull Request (PR) to add changes to the latest in-development version. The PR will undergo review before approval.
-* Create an [issue](https://github.com/Asbjoedt/Spreadsheets-Preservation-Specification/issues) to describe and discuss any changes.
+You may:
+1. Create an [issue](https://github.com/Asbjoedt/Spreadsheets-Preservation-Specification/issues) to describe and discuss any changes.
+2. Send a Pull Request (PR) to resolve issues in the latest in-development version. The PR will undergo review before approval.
+
 
 ## Partners
 The following organisations are strategic partners, benefactors and co-creators in the creation of this specification and the OPF ODF Validator.
