@@ -1,3 +1,5 @@
+<img src="https://openpreservation.org/wp-content/uploads/2019/11/opf-site-logo.png" width="300" alt="Open Preservation Foundation logo">
+
 # OPF Spreadsheets Preservation Specification
 
 **Draft v1.0, 2023**
