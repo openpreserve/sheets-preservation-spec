@@ -43,9 +43,9 @@ The following table describes the requirements for data quality when preserving 
 | ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
 | ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
 | ODS_5 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
-| ODS_6 | Cell values | The file **SHOULD** have cell values or objects. |
+| ODS_6 | Content | The file **SHOULD** have cell values or objects. |
 | ODS_7 | Macros | The file **SHOULD NOT** have any macros. |
-| ODS_8 | Set “LoadReadonly” | The file **SHOULD** have XML attribute “LoadReadonly” in “settings.xml” set as true. |
+| ODS_8 | LoadReadonly | The file **SHOULD** have XML attribute "LoadReadonly" in “settings.xml” set as true. |
 | ODS_9 | Printer settings | The file **MAY** have XML attributes “PrinterName”, “PrinterPaperFromSetup” and “PrinterSetup”. |
 | ODS_10 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
@@ -64,10 +64,10 @@ The following table describes the requirements for data quality, when preserving
 | ODS_4 | Conformance | The file **SHOULD** comply with “strict” conformance class. |
 | ODS_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
 | ODS_6 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
-| ODS_7 | Cell values | The file **SHOULD** have cell values or objects. |
+| ODS_7 | Content | The file **SHOULD** have cell values or objects. |
 | ODS_8 | Macros | The file **SHOULD NOT** have any macros. |
 | ODS_9 | Absolute filepath | The file **SHOULD NOT** have absolute filepath to local file system in the XML attribute “x15ac:absPath” in “workbook.xml”. |
-| ODS_10 | Mark “final” | The file **SHOULD** have “final” mark. |
+| ODS_10 | Final | The file **SHOULD** have “final” mark. |
 | ODS_11 | Printer settings | The file **MAY** have XML attributes “PrinterName”, “PrinterPaperFromSetup” and “PrinterSetup”. |
 | ODS_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
