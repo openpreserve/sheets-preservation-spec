@@ -41,7 +41,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_1 | Password protection | The file **MUST NOT** have read or write password protection. |
 | ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”. |
 | ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
-| ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
+| ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes cell formula references and objects. |
 | ODS_5 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
 | ODS_6 | Cell values | The file **SHOULD** have cell values or objects. |
 | ODS_7 | Macros | The file **SHOULD NOT** have any macros. |
