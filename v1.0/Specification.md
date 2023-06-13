@@ -110,19 +110,19 @@ The following table describes the requirements for data quality, when preserving
 
 | ID | Name | Description |
 | --- | --- | --- |
-| ODS_1 | Password protection | The file **MUST NOT** have read or write password protection. |
-| ODS_2 | Standard compliance | The file **MUST** comply with the standard “ISO/IEC 29500 Office Open XML File Formats”. |
-| ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
-| ODS_4 | Conformance | The file **SHOULD** comply with “strict” conformance class. |
-| ODS_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
-| ODS_6 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
-| ODS_7 | Content | The file **SHOULD** have cell values or objects. |
-| ODS_8 | Macros | The file **SHOULD NOT** have any macros. |
-| ODS_9 | Absolute filepath | The file **SHOULD NOT** have absolute filepath to local file system in the XML attribute “x15ac:absPath” in “workbook.xml”. |
-| ODS_10 | Final | The file **SHOULD** have “final” mark. |
-| ODS_11 | Printer settings | The file **MAY** have XML attributes “PrinterName”, “PrinterPaperFromSetup” and “PrinterSetup”. |
-| ODS_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
-| ODS_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
+| OOXML_1 | Password protection | The file **MUST NOT** have read or write password protection. |
+| OOXML_2 | Standard compliance | The file **MUST** comply with the standard “ISO/IEC 29500 Office Open XML File Formats”. |
+| OOXML_3 | Extension | The file **MUST** have extension ".xlsm", “.xlsx”, “.xltx” or ".xltm". |
+| OOXML_4 | Conformance | The file **SHOULD** comply with “strict” conformance class. |
+| OOXML_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
+| OOXML_6 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
+| OOXML_7 | Content | The file **SHOULD** have cell values or objects. |
+| OOXML_8 | Macros | The file **SHOULD NOT** have any macros. |
+| OOXML_9 | Absolute filepath | The file **SHOULD NOT** have absolute filepath to local file system in the XML attribute “x15ac:absPath” in “workbook.xml”. |
+| OOXML_10 | Final | The file **SHOULD** have “final” mark. |
+| OOXML_11 | Printer settings | The file **MAY** have printer settings files in the "printerSettings" folder. |
+| OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
+| OOXML_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
 ### 4.3 Mark-up Languages
 
@@ -198,7 +198,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | --- | --- |
 | OOXML_1 | The password can manually be obtained and input to unlock and resave the file without password protection. Obtaining the password may involve searching through records management systems, other registries or asking the creator of the file. If the password cannot be obtained the spreadsheet should not be preserved. |
 | OOXML_2 | File format compliance should be validated using a tool, since the manual inspection of each property is an unfeasible task for any human. |
-| OOXML_3 | Extension should be lowercase.<br><br>Extension “.xlam” is not allowed, since this data are an “macro-enabled workbook add-in” and only contains technical data, that changes or enhances the interface and functionality of the rendering application i.e. Excel. |
+| OOXML_3 | Extension should be lowercase.<br><br>Extension “.xlam” is not allowed, since this data are an “macro-enabled workbook add-in” and only contains technical data, that changes or enhances the interface and functionality of the rendering application i.e. Excel. Extension ".xlsb" is not allowed since this is a binary file format. |
 | OOXML_4 | Conformance may be “transitional” but should be “strict”. Conforming to “strict” involves converting or removing any legacy features imported from older Excel file formats i.e. .xls and .xlt. If a spreadsheet was created as an OOXML spreadsheet, the conformance will by default be “transitional”. However, this spreadsheet will not contain any legacy features and will de facto conform to “strict” and to obtain “strict” conformance only conformance class workbook attribute and namespaces must be changed.<br><br>At the time of writing of this specification tool support for conversion and validation of Strict is poorly supported. |
 | OOXML_5 | Any external data references such as data connections, RTD functions, cell references or objects can be removed, however the calculated cell value MUST be preserved.<br><br>Removal of data connections will not result in any risk in loss of calculated cell values.<br><br>Removal of RealTimeData functions and cell references by removing the underlying formula must happen by simultaneously preserving the calculated cell value.<br><br>External object references may be included as an independent object and child/parent relationships created. Thirdly, external object references can be removed with an appraised acceptance of the data loss.<br><br>Cell hyperlinks are exempt and covered in OOXML_13.<br><br>Removed external data can be saved as metadata in a sidecar file or in an associated table, to document its existence before removal. |
 | OOXML_6 | Embedded objects can be converted to a file format, your organisation accepts. Secondly, embedded objects can be removed with an appraised acceptance of the data loss. |
