@@ -92,7 +92,7 @@ The following table describes the requirements for data quality when preserving 
 | --- | --- | --- |
 | ODS_1 | Password protection | The file **MUST NOT** have read or write password protection. |
 | ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”. |
-| ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “ots”. |
+| ODS_3 | Extension | The file **MUST** have extension “.fods”, “.ods” or “.ots”. |
 | ODS_4 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
 | ODS_5 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
 | ODS_6 | Content | The file **SHOULD** have cell values or objects. |
@@ -101,6 +101,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_9 | Printer settings | The file **MAY** have XML attributes “PrinterName”, “PrinterPaperFromSetup” and “PrinterSetup”. |
 | ODS_10 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
+| ODS_12 | Preview image | The file **MAY NOT** have a preview image. |
 
 ### 4.2 Office Open XML SpreadsheetML
 
@@ -187,6 +188,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | ODS_9 | Printer settings are information related to local and/or network printers. This data may contain encrypted information on how to connect to the printer. For security reasons, this data may be removed. Removing the data will not result in the loss of any significant properties. |
 | ODS_10 | Metadata in the file property information and “meta.xml” such as author, title, category and user defined properties etc. can be misleading if i.e. the document was reused as a template. User defined custom properties may be created and stored in “meta.xml”.<br><br>You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 | ODS_11 | Cell hyperlinks are in essence unproblematic to keep in a spreadsheet, but your organisation may want to remove cell hyperlinks, since they reference external information.<br><br>Cell hyperlinks may be opened using an internet archive, if the cell hyperlinks are no longer active.<br><br>Broken (unavailable URL) cell hyperlinks may be checked for upon ingest and reported.<br><br>Cell hyperlinks can be saved in a sidecar file or in an associated table, to document their existence before removal. |
+| ODS_12 | Preview image is a thumbnail image stored in the spreadsheet's zipped path “Thumbnails/thumbnail.png”. The preview image may be used by the operating system as the file's icon in the file browser/manager.<br><br>The preview image should be considered insignificant for preservation, since it may be generated at any given time and serves no essential purpose. It  may be considered an artefact. |
 
 ### 5.2 Office Open XML SpreadsheetML
 
