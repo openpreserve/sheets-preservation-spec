@@ -97,7 +97,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_5 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
 | ODS_6 | Content | The file **SHOULD** have cell values or objects. |
 | ODS_7 | Macros | The file **SHOULD NOT** have any macros. |
-| ODS_8 | Settings file |The file **MAY NOT** have the "settings.xml" file. |
+| ODS_8 | Settings file |The file **MAY** have the "settings.xml" file. |
 | ODS_9 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_10 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 | ODS_11 | Preview image | The file **MAY NOT** have a preview image. |
