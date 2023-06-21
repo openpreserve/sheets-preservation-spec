@@ -101,7 +101,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_9 | Printer settings | The file **MAY** have XML attributes “PrinterName”, “PrinterPaperFromSetup” and “PrinterSetup”. |
 | ODS_10 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
-| ODS_12 | Preview image | The file **MAY NOT** have a preview image. |
+| ODS_12 | Preview image | The file **MAY** have a preview image. |
 
 ### 4.2 Office Open XML SpreadsheetML
 
