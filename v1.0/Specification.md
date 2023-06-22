@@ -332,7 +332,7 @@ Table with terms used in the specification.
 | Term | Description |
 | --- | --- |
 | **Archival Information Package (AIP)** | *From OAIS:* An Information Package, consisting of the Content Information and the associated Preservation Description Information (PDI), which is preserved within an OAIS. |
-| **Artefact** | An artefact is a data object in a spreadsheet which may be considered insignificant for preservation and future reuse of the spreadsheet, but removing the object may not be considered neither necessary nor worthwhile. Therefore, the data object may remain in the spreadsheet and considered unnecessary for rendering or future migration. |
+| **Artefact** | An artefact is a data object in a spreadsheet which is not a significant property and hence not important for future reuse of the spreadsheet, but removing the object may not be considered neither necessary nor worthwhile. Therefore, the data object may remain in the spreadsheet and considered unnecessary for rendering or future migration. |
 | **Appraisal** | A preservation assessment to determine whether or not the data should be preserved. |
 | **Cell** | A spreadsheet consists of sheets, which consist of cells. The cell is the minimal structure for storing computational data in a spreadsheet. A cell has an address composed of the column and row ids i.e. A1 is the address of the first cell on a sheet, and is composed of column A and row 1. |
 | **Compliance** | In this context, compliance means to abide by any requirement set in a specification or standard. |
