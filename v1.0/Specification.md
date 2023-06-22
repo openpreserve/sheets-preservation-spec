@@ -100,7 +100,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_8 | Settings file |The file **MAY** have the "settings.xml" file. |
 | ODS_9 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_10 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
-| ODS_11 | Preview image | The file **MAY NOT** have a preview image. |
+| ODS_11 | Preview image | The file **MAY** have a preview image. |
 
 ### 4.2 Office Open XML SpreadsheetML
 
