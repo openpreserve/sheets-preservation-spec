@@ -138,7 +138,7 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | CSV_1 | CSV file format | The file **MUST** comply with the specification “Common Format and MIME Type for Comma-Separated Values (CSV) Files, RFC 4180”. |
 | CSV_2 | Extension | The file **MUST** have extension “.csv”. |
-| CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
+| CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named after the sheet's name |
 | CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
 ### 4.4 Static File Formats
@@ -154,7 +154,7 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
 | STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
-| STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
+| STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named after the sheet's name. |
 | STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
 | STATIC_5 | Formulas | The spreadsheet **MUST** have any formulas printed to a static file named “Data”. |
 | STATIC_6 | Cell hyperlinks | The spreadsheet **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
@@ -235,7 +235,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | --- | --- |
 | STATIC_1 | You must choose one of these file formats to preserve a static representation of the spreadsheet in: JPEG-2000, PDF/A, PNG or TIFF file formats. A wide range of other image file formats exists, but these are typically not used for preservation of data, unless the data was originally created in the file format.<br><br>This specification limits the number of possible file formats to use for preserving a static representation of the spreadsheet, because it is necessary to specify exact file formats, otherwise it is not possible to validate the file format. Simply stating that “your organisation must use any static file format, that your organisation has a file format policy for” is not sufficient, because it is not feasible for software validation workflows to universally validate any possible static file format. |
 | STATIC_2 | Extension should be lowercase. |
-| STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. It is up to your organisation to determine if sheets should be split into multiple export files, or if you combine them into a single multipage file. If using a single file for each sheet, the filename for each sheet must be the sheet's name. If using a single file for alle sheets, each page must have the name of the sheet in it. This specification does not recommend one approach over the other, and if your organisation does not have any preference, you may allow both approaches. |
+| STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. The filename for each sheet must be the sheet's name. |
 | STATIC_4 | Before exporting, you must applying text wrapping to all cells of the sheet, otherwise truncated cells with information will result in information loss, since this information will be hidden behind the proceeding column’s cell, if this cell contains information. |
 | STATIC_5 | The new static file representation of the formulas should have three columns in row 1 with the following information:<ul><li>*Column 1:* Sheet name</li><li>*Column 2:* Cell reference</li><li>*Column 3:* Formula</li></ul> |
 | STATIC_6 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
