@@ -306,7 +306,7 @@ The following sub sections provide tables of example software covering different
 | --- | --- | --- | --- |
 | KEEPS Validator ODF | Java application. | Linux, macOS, Windows | LGPL 3.0 |
 | ODF Validator | Both a Java application and an online tool is available. | Linux, macOS, Windows | Apache |
-| OPF ODF Validator | Java application. Created and maintained by Open Preservation Foundation. | Linux, macOS, Windows |  |
+| OPF ODF Validator | Java application. Created and maintained by Open Preservation Foundation. | Linux, macOS, Windows | BSD 3-Clause License |
 | OOXML Validator | Both a Visual Studio Code extension and a CLI tool is available. | Linux, macOS, Windows | MIT |
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
