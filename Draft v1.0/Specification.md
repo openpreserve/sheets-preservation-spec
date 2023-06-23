@@ -1,4 +1,4 @@
-<img src="https://openpreservation.org/wp-content/uploads/2019/11/opf-site-logo.png" width="300" alt="Open Preservation Foundation logo">
+![Open Preservation Foundation logo](https://openpreservation.org/wp-content/uploads/2023/06/Untitled-design.png)
 
 # OPF Spreadsheets Preservation Specification
 
