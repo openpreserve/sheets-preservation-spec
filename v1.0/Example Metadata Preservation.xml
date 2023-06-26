@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<spreadsheet-metadata>
+    <file>
+		<filename>Travel_budget.xlsx</filename>
+		<creator>Jane Doe</creator>
+		<creationDate>16-12-2023</creationDate>
+		<title>Trabel budget for Osaka in spring 2024</title>
+		<categories>
+			<category>travel</category>
+			<category>budget</category>
+		</categories>
+		<sheetNames>
+			<sheetName active="true">Sheet1</sheetName>
+			<sheetName>Sheet2</sheetName>
+		</sheetNames>
+		<externalReferences>
+			<externalReference position="K8"></externalReference>
+			<externalReference position="K9"></externalReference>
+		</externalReferences>
+		<embeddedObjects>
+			<embeddedObject position="L5-M14"></embeddedObject>
+			<embeddedObject position="N5-R14"></embeddedObject>
+		</embeddedObjects>
+		<formulas>
+			<formula position="A1">=SUM(A2,A5)</formula>
+			<formula position="F1">=SUM(F2,F5)</formula>
+		</formulas>
+		<macros>
+			<macro name="Unhide all sheets">
+                Sub UnhideAllWoksheets()
+                Dim ws As Worksheet
+                For Each ws In ActiveWorkbook.Worksheets
+                ws.Visible = xlSheetVisible
+                Next ws
+                End Sub
+            </macro>
+		</macros>
+		<cellHyperlinks>
+			<cellHyperlink position="D3">https://openpreservation.org/</cellHyperlink>
+			<cellHyperlink position="D4">https://en.rigsarkivet.dk/</cellHyperlink>
+            <cellHyperlink position="D4">https://www.nationaalarchief.nl/en</cellHyperlink>
+            <cellHyperlink position="D4">https://www.ra.ee/en/</cellHyperlink>
+		</cellHyperlinks>
+	</file>
+    <file>
+		<filename>Economic overview.xlsx</filename>
+		<creator>John Doe</creator>
+		<creation date>06-04-2023</creation date>
+		<title>Economy of scale for automating assembly line 2</title>
+		<categories>
+			<category>economy</category>
+			<category>automation</category>
+			<category>assembly lines</category>
+		</categories>
+		<sheet names>
+			<sheet name>Economy</sheet name>
+			<sheet name active="true">Pivot tables</sheet name>
+		</sheet names>		
+	</file>
+</spreadsheet-metadata>
