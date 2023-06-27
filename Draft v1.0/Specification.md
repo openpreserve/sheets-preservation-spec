@@ -1,6 +1,8 @@
+![Open Preservation Foundation logo](https://openpreservation.org/wp-content/uploads/2023/06/Untitled-design.png)
+
 # OPF Spreadsheets Preservation Specification
 
-**v1.0, 2023**
+**Draft v1.0, 2023**
 
 ## Table of Contents
 
@@ -304,7 +306,7 @@ The following sub sections provide tables of example software covering different
 | --- | --- | --- | --- |
 | KEEPS Validator ODF | Java application. | Linux, macOS, Windows | LGPL 3.0 |
 | ODF Validator | Both a Java application and an online tool is available. | Linux, macOS, Windows | Apache |
-| OPF ODF Validator | Java application. Created and maintained by Open Preservation Foundation. | Linux, macOS, Windows |  |
+| OPF ODF Validator | Java application. Created and maintained by Open Preservation Foundation. | Linux, macOS, Windows | BSD 3-Clause License |
 | OOXML Validator | Both a Visual Studio Code extension and a CLI tool is available. | Linux, macOS, Windows | MIT |
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
@@ -342,6 +344,9 @@ Table with terms used in the specification.
 | **Embedded objects** | An object embedded in the file/package i.e. an image, another spreadsheet or 3D object. |
 | **External cell references** | External cell references is a type of cell formula, which fetches data from another spreadsheet. |
 | **External objects** | An object that is linked as an OLE object, but is not embedded into the file/package. |
+| **File format** | *From Digital Preservation Handbook:* A file format is a standard way that information is encoded for storage in a computer file. It tells the computer how to display, print, and process, and save the information. It is dictated by the application program which created the file, and the operating system under which it was created and stored. Some file formats are designed for very particular types of data, others can act as a container for different types. A particular file format is often indicated by a file name extension containing three or four letters that identify the format. |
+| **File format extension** | A file format extension is an identifier set at the end of the filename and delimited by a dot/period e.g. ".ods" or ".xlsx". The identifier helps the operating system to associate an application for opening the file. |
+| **File format signature** | A file format signature is a unique combination of bits, which identifies a specific file format. The signature, also called a "magic number", authoritatively identifies a file's format. |
 | **Macros** | A sequence of code, which the spreadsheet can execute. This code may change data in the spreadsheet or the operating system. |
 | **Mark-up language** | A mark-up language is a structured and text-encoded model for annotating data. CSV and HTML are mark-up languages. |
 | **Migration path** | The chosen output file format for an input file format in a data conversion process. The migration path should to do the widest possible extent preserve all the significant properties of the input file format. Methodical assessments are necessary to define acceptable migration paths. |
