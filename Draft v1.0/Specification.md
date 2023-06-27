@@ -269,12 +269,12 @@ The following table describes which metadata should be preserved and in which ci
 | CSV_3, STATIC_3 | Sheets | The names of all sheets. | String(s) | Every time |
 | ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. | String(s)<br><br>Cell position attribute | If removed |
 | ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. | String(s)<br><br>Cell position attribute | If removed |
-| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. | String(s)<br><br>Cell position attribute | If removed |
+| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. | String(s)<br><br>Cell position attribute | Every time |
 | ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. | String(s) | If removed |
 | ODS_11, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
 
 ### 6.2 Example Metadata File
-You may find an example of a metadata preservation sidecar file created in XML [here](/v1.0/Example%20Metadata%20Preservation.xml).
+You may find an example of a metadata preservation sidecar file created in XML [here](/v1.0/Example%20Metadata%20File.xml).
 
 ## 7 Example Spreadsheets Software
 
