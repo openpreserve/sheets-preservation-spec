@@ -21,8 +21,8 @@
     * [5.3 Mark-up Languages](#53-mark-up-languages)
     * [5.4 Static File Formats](#54-static-file-formats)
 * [6 Metadata Preservation Scheme](#6-metadata-preservation-scheme)
-    * [Information Fields](#61-information-fields)
-    * [Example Metadata](#62-example-metadata)
+    * [Metadata Fields](#61-metadata-fields)
+    * [Example Metadata File](#62-example-metadata)
 * [7 Example Spreadsheets Software](#7-example-spreadsheets-software)
     * [7.1 Manual XML Editing](#71-manual-xml-editing)
     * [7.2 Programmatic Conversion and Data Manipulation](#72-programmatic-conversion-and-data-manipulation)
@@ -125,7 +125,7 @@ The following table describes the requirements for data quality, when preserving
 | OOXML_9 | Absolute filepath | The file **SHOULD NOT** have absolute filepath to local file system in the XML attribute “x15ac:absPath” in “workbook.xml”. |
 | OOXML_10 | Final | The file **SHOULD** have “final” mark. |
 | OOXML_11 | Printer settings | The file **MAY** have printer settings files in the "printerSettings" folder. |
-| OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
+| OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties. |
 | OOXML_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
 ### 4.3 Mark-up Languages
@@ -141,8 +141,9 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | CSV_1 | CSV file format | The file **MUST** comply with the specification “Common Format and MIME Type for Comma-Separated Values (CSV) Files, RFC 4180”. |
 | CSV_2 | Extension | The file **MUST** have extension “.csv”. |
-| CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
-| CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
+| CSV_3 | Sheets | The file **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
+| CSV_4 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
+| CSV_5 | Metadata | The file **MAY** have metadata in the file’s properties. |
 
 ### 4.4 Static File Formats
 
@@ -159,8 +160,9 @@ The following table describes the requirements for data quality, when preserving
 | STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
 | STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
 | STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
-| STATIC_5 | Formulas | The spreadsheet **MUST** have any formulas printed to a static file named “Data”. |
-| STATIC_6 | Cell hyperlinks | The spreadsheet **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
+| STATIC_5 | Formulas | The file **MUST** have any formulas printed to a static file named “Data”. |
+| STATIC_6 | Metadata | The file **MAY** have metadata in the file’s properties. |
+| STATIC_7 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
 
 ## 5 Guidelines for File Format Policies Compliance
 
@@ -227,6 +229,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | CSV_2 | Extension should be lowercase. |
 | CSV_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. The name of the sheet must be given “Sheet1.csv”, “Sheet2.csv” etc. |
 | CSV_4 | The file format of the graphical material should be any appropriate image file format, your organisation already has a file format policy for, or a new file format policy should be created. |
+| CSV_5 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 
 ### 5.4 Static File Formats
 
@@ -241,38 +244,37 @@ The following table gives guidelines for how to comply with the requirements in 
 | STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. It is up to your organisation to determine if sheets should be split into multiple export files, or if you combine them into a single multipage file. When using a single multipage file, each page must have the name of the sheet in it. This specification does not recommend one approach over the other, and if your organisation does not have any preference, you may allow both approaches. |
 | STATIC_4 | Before exporting, you must applying text wrapping to all cells of the sheet, otherwise truncated cells with information will result in information loss, since this information will be hidden behind the proceeding column’s cell, if this cell contains information. |
 | STATIC_5 | The new static file representation of the formulas should have three columns in row 1 with the following information:<ul><li>*Column 1:* Sheet name</li><li>*Column 2:* Cell reference</li><li>*Column 3:* Formula</li></ul> |
-| STATIC_6 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
+| STATIC_6 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
+| STATIC_7 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
 
 ## 6 Metadata Preservation Scheme
 
-This specification defines a preservation scheme for the metadata in a spreadsheet or related to altering the content of a spreadsheet.
+This specification defines a preservation scheme for the metadata in a spreadsheet or metadata related to altering the content of a spreadsheet.
 
-The metadata may be preserved in a sidecar file for each spreadsheet or preserved in an associated database table with metadata for multiple spreadsheets.
+The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets.
 
-###  6.1 Information Fields
+###  6.1 Metadata Fields
 
 The following table describes which metadata should be preserved and in which circumstances.
 
 **Table 9. Metadata that may be preserved.**
 
-| IDs | Name | Description | Fields | Circumstance |
+| IDs | Name | Description | Data type | Circumstance |
 | --- | --- | --- | --- | --- |
-| ODS_10, OOXML_12 | Filename | The filename of the spreadsheet. | String with filename including extension | Every time |
-| ODS_10, OOXML_12 | Creator | The creator of the spreadsheet in the file properties. | String with the creator's full name | Every time |
-| ODS_10, OOXML_12 | Creation date | The creation date of the spreadsheet in the file properties. |  | Every time |
-| ODS_10, OOXML_12 | Title | The title of the spreadsheet in the file properties. | String with the title | Every time |
-| ODS_10, OOXML_12 | Category | The category of the spreadsheet in the file properties. | String for each category | Every time |
-| CSV_3, STATIC_3 | Sheets | The names of all sheets. | String for each of the sheet names | Every time |
-| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData.  | Cell range<br><br> | If removed |
-| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. | Cell range<br><br> | If removed |
-| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. |  |  If removed |
-| ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. |  | If removed |
-| ODS_11, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. |  | Every time |
+| ODS_10, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | String | Every time |
+| ODS_10, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | String | If value exist |
+| ODS_10, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | DateTime | Every time |
+| ODS_10, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties. | String | If value exist |
+| ODS_10, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | String(s) | If value exist |
+| CSV_3, STATIC_3 | Sheets | The names of all sheets. | String(s) | Every time |
+| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. | String(s)<br><br>Cell position attribute | If removed |
+| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. | String(s)<br><br>Cell position attribute | If removed |
+| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. | String(s)<br><br>Cell position attribute | If removed |
+| ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. | String(s) | If removed |
+| ODS_11, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
 
-### 6.2 Example Metadata
+### 6.2 Example Metadata File
 You may find an example of a metadata preservation sidecar file created in XML [here](/v1.0/Example%20Metadata%20Preservation.xml).
-
-The example has metadata for two spreadsheets.
 
 ## 7 Example Spreadsheets Software
 

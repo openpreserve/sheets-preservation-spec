@@ -42,19 +42,4 @@
             <cellHyperlink position="D4">https://www.ra.ee/en/</cellHyperlink>
 		</cellHyperlinks>
 	</file>
-    <file>
-		<filename>Economic overview.xlsx</filename>
-		<creator>John Doe</creator>
-		<creation date>06-04-2023</creation date>
-		<title>Economy of scale for automating assembly line 2</title>
-		<categories>
-			<category>economy</category>
-			<category>automation</category>
-			<category>assembly lines</category>
-		</categories>
-		<sheet names>
-			<sheet name>Economy</sheet name>
-			<sheet name active="true">Pivot tables</sheet name>
-		</sheet names>		
-	</file>
 </spreadsheet-metadata>
