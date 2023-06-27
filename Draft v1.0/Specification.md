@@ -274,7 +274,7 @@ The following table describes which metadata should be preserved and in which ci
 | ODS_11, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
 
 ### 6.2 Example Metadata File
-You may find an example of a metadata preservation sidecar file created in XML [here](/v1.0/Example%20Metadata%20File.xml).
+You may find an example of a metadata preservation sidecar file created in XML [here](/Draft v1.0/Example%20Metadata%20File.xml).
 
 ## 7 Example Spreadsheets Software
 
