@@ -1,6 +1,8 @@
+![Open Preservation Foundation logo](https://openpreservation.org/wp-content/uploads/2023/06/Untitled-design.png)
+
 # OPF Spreadsheets Preservation Specification
 
-**v1.0, 2023**
+**Draft v1.0, 2023**
 
 ## Table of Contents
 
