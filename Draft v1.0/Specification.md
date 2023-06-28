@@ -260,19 +260,19 @@ The following table recommends which metadata should be preserved and in which c
 
 **Table 9. Metadata that may be preserved.**
 
-| IDs | Name | Description | Data type | Circumstance |
-| --- | --- | --- | --- | --- |
-| ODS_9, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | String | Every time |
-| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | String | If value exist |
-| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | DateTime | Every time |
-| ODS_9, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties. | String | If value exist |
-| ODS_9, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | String(s) | If value exist |
-| CSV_3, STATIC_3 | Sheets | The names of all sheets. | String(s) | Every time |
-| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. | String(s)<br><br>Cell position attribute | If removed |
-| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. | String(s)<br><br>Cell position attribute | If removed |
-| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. | String(s)<br><br>Cell position attribute | Every time |
-| ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. | String(s) | If removed |
-| ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
+| Relevant IDs | Name | Description | Circumstance |
+| --- | --- | --- | --- |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties.| If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | If value exist |
+| CSV_3, STATIC_3 | Sheets | The names of all sheets. | Every time |
+| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. The cell position of the external reference should be preserved. | If removed |
+| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. The cell position of the embedded object should be preserved. | If removed |
+| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. The cell position of the formula should be preserved. | Every time |
+| ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. The entire macro code should be preserved. The name of the macro should be preserved. | If removed |
+| ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. The cell position of the hyperlink should be preserved. | Every time |
 
 ## 7 Example Spreadsheets Software
 
