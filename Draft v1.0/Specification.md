@@ -140,8 +140,8 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | CSV_1 | CSV file format | The file **MUST** comply with the specification “Common Format and MIME Type for Comma-Separated Values (CSV) Files, RFC 4180”. |
 | CSV_2 | Extension | The file **MUST** have extension “.csv”. |
-| CSV_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named after the sheet's name |
-| CSV_4 | Graphical material | The spreadsheet **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
+| CSV_3 | Sheets | The file **MUST** have each sheet exported to a single file named consistently with the sheet's name. |
+| CSV_4 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
 ### 4.4 Static File Formats
 
@@ -156,10 +156,10 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
 | STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
-| STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named after the sheet's name. |
-| STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
-| STATIC_5 | Formulas | The spreadsheet **MUST** have any formulas printed to a static file named “Data”. |
-| STATIC_6 | Cell hyperlinks | The spreadsheet **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
+| STATIC_3 | Sheets | The file **MUST** have each sheet exported to a single file named consistently with the sheet's name and a file extension consistent with the converted format. |
+| STATIC_4 | Truncated cells | The file **MUST NOT** have any truncated cells. |
+| STATIC_5 | Formulas | The file **MUST** have any formulas printed to a static file named “Data”. |
+| STATIC_6 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
 
 ## 5 Guidelines for File Format Policies Compliance
 
