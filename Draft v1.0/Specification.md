@@ -23,8 +23,7 @@
     * [5.3 Mark-up Languages](#53-mark-up-languages)
     * [5.4 Static File Formats](#54-static-file-formats)
 * [6 Metadata Preservation Scheme](#6-metadata-preservation-scheme)
-    * [Metadata Fields](#61-metadata-fields)
-    * [Example Metadata File](#62-example-metadata)
+    * [6.1 Metadata Fields](#61-metadata-fields)
 * [7 Example Spreadsheets Software](#7-example-spreadsheets-software)
     * [7.1 Manual XML Editing](#71-manual-xml-editing)
     * [7.2 Programmatic Conversion and Data Manipulation](#72-programmatic-conversion-and-data-manipulation)
@@ -251,30 +250,27 @@ The following table gives guidelines for how to comply with the requirements in 
 
 This specification defines a preservation scheme for the metadata in a spreadsheet or metadata related to altering the content of a spreadsheet.
 
-The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets.
+The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets. It is up to your organisation to determine the best approach and metadata standard for capturing the recommended metadata.
 
 ###  6.1 Metadata Fields
 
-The following table describes which metadata should be preserved and in which circumstances.
+The following table recommends which metadata should be preserved and in which circumstances.
 
 **Table 9. Metadata that may be preserved.**
 
 | IDs | Name | Description | Data type | Circumstance |
 | --- | --- | --- | --- | --- |
-| ODS_10, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | String | Every time |
-| ODS_10, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | String | If value exist |
-| ODS_10, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | DateTime | Every time |
-| ODS_10, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties. | String | If value exist |
-| ODS_10, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | String(s) | If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | String | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | String | If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | DateTime | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties. | String | If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | String(s) | If value exist |
 | CSV_3, STATIC_3 | Sheets | The names of all sheets. | String(s) | Every time |
 | ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. | String(s)<br><br>Cell position attribute | If removed |
 | ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. | String(s)<br><br>Cell position attribute | If removed |
 | STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. | String(s)<br><br>Cell position attribute | Every time |
 | ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. | String(s) | If removed |
-| ODS_11, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
-
-### 6.2 Example Metadata File
-You may find an example of a metadata preservation sidecar file created in XML [here](/Draft v1.0/Example%20Metadata%20File.xml).
+| ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. | String(s)<br><br>Cell position attribute | Every time |
 
 ## 7 Example Spreadsheets Software
 
