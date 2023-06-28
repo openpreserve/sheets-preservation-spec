@@ -407,10 +407,10 @@ Names of the persons, who wrote the first version of the specification.
 | Author | Organisation |
 | --- | --- |
 | Asbjørn Skødt | Danish National Archives |
-| Carl Wilson | Open Preservation Foundation |
 | Remco van Veenendaal | National Archives of the Netherlands |
 | Kaido Kivilaan | National Archives of Estonia |
 
 ### 9.2 Acknowledgments
+Thanks to Carl Wilson of the Open Preservation Foundation who acted as a reviewer.
 
 This specification draws inspiration from and is a natural by-product of the Open Preservation Foundation’s discontinued Archives Interest Group (AIG), which in the years 2016-21 investigated the significant properties of spreadsheets. The group won the audience award for best poster at the international digital preservation conference iPRES in 2019 and published their work in a final report in 2021, which also was presented as a paper at iPRES the same year.
