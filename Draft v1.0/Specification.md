@@ -369,6 +369,7 @@ Table with terms used in the specification.
 | --- | --- |
 | **Archival Information Package (AIP)** | *From OAIS:* An Information Package, consisting of the Content Information and the associated Preservation Description Information (PDI), which is preserved within an OAIS. |
 | **Appraisal** | A preservation assessment to determine whether or not the data should be preserved. |
+| **Artefact** | An artefact is a spreadsheet property not considered significant for long-term preservation and future reuse. While preserving artefacts are unnecessary, removing them may also be considered a preservation risk. It is safe to ignore artefacts when migrating between formats and representations. |
 | **Cell** | A spreadsheet consists of sheets, which consist of cells. The cell is the minimal structure for storing computational data in a spreadsheet. A cell has an address composed of the column and row ids i.e. A1 is the address of the first cell on a sheet, and is composed of column A and row 1. |
 | **Compliance** | In this context, compliance means to abide by any requirement set in a specification or standard. |
 | **Conformance** | Conformance is any defined differentiation in a specification. This means the number or definition of requirements of the specification may be stricter at one conformance level over another conformance level. |
@@ -439,10 +440,10 @@ Names of the persons, who wrote the first version of the specification.
 | Author | Organisation |
 | --- | --- |
 | Asbjørn Skødt | Danish National Archives |
-| Carl Wilson | Open Preservation Foundation |
 | Remco van Veenendaal | National Archives of the Netherlands |
 | Kaido Kivilaan | National Archives of Estonia |
 
-### 10.2 Acknowledgments
+### 9.2 Acknowledgments
+Thanks to Carl Wilson of the Open Preservation Foundation who acted as a reviewer.
 
 This specification draws inspiration from and is a natural by-product of the Open Preservation Foundation’s discontinued Archives Interest Group (AIG), which in the years 2016-21 investigated the significant properties of spreadsheets. The group won the audience award for best poster at the international digital preservation conference iPRES in 2019 and published their work in a final report in 2021, which also was presented as a paper at iPRES the same year.
