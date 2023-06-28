@@ -23,7 +23,7 @@
     * [5.3 Mark-up Languages](#53-mark-up-languages)
     * [5.4 Static File Formats](#54-static-file-formats)
 * [6 Metadata Preservation Scheme](#6-metadata-preservation-scheme)
-    * [6.1 Metadata Fields](#61-metadata-fields)
+    * [6.1 Metadata Recommendations](#61-metadata-recommendations)
 * [7 Example Spreadsheets Software](#7-example-spreadsheets-software)
     * [7.1 Manual XML Editing](#71-manual-xml-editing)
     * [7.2 Programmatic Conversion and Data Manipulation](#72-programmatic-conversion-and-data-manipulation)
@@ -254,7 +254,7 @@ This specification defines a preservation scheme for the metadata in a spreadshe
 
 The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets. It is up to your organisation to determine the best approach and metadata standard for capturing the recommended metadata.
 
-###  6.1 Metadata Fields
+###  6.1 Metadata Recommendations
 
 The following table recommends which metadata should be preserved and in which circumstances.
 
@@ -268,8 +268,8 @@ The following table recommends which metadata should be preserved and in which c
 | ODS_9, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties.| If value exist |
 | ODS_9, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | If value exist |
 | CSV_3, STATIC_3 | Sheets | The names of all sheets. | Every time |
-| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. The cell position of the external reference should be preserved. | If removed |
-| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. The cell position of the embedded object should be preserved. | If removed |
+| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. The cell position of the external reference should be preserved. Recommendations for the following types of content:<br>- Data sources: The database name, description and type should be preserved<br>- External cell references: The formula should be preserved.<br>- RealTimeData: The formula should be preserved.<br>- External OLE objects: The target and content type should be preserved. | If removed |
+| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. The cell position of the embedded object should be preserved. The content type should be preserved. | If removed |
 | STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. The cell position of the formula should be preserved. | Every time |
 | ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. The entire macro code should be preserved. The name of the macro should be preserved. | If removed |
 | ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. The cell position of the hyperlink should be preserved. | Every time |
