@@ -143,7 +143,8 @@ The following table describes the requirements for data quality, when preserving
 | CSV_1 | CSV file format | The file **MUST** comply with the specification “Common Format and MIME Type for Comma-Separated Values (CSV) Files, RFC 4180”. |
 | CSV_2 | Extension | The file **MUST** have extension “.csv”. |
 | CSV_3 | Sheets | The file **MUST** have each sheet exported to a single file. |
-| CSV_4 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
+| CSV_4 | Metadata | The file **MAY** have metadata in the file’s properties. |
+| CSV_5 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
 ### 4.4 Static File Formats
 
@@ -161,7 +162,8 @@ The following table describes the requirements for data quality, when preserving
 | STATIC_3 | Sheets | The file **MUST** have each sheet exported to a single file. |
 | STATIC_4 | Truncated cells | The file **MUST NOT** have any truncated cells. |
 | STATIC_5 | Formulas | The file **MUST** have any formulas printed to a static file named “Data”. |
-| STATIC_6 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
+| STATIC_6 | Metadata | The file **MAY** have metadata in the file’s properties. |
+| STATIC_7 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
 
 ## 5 Guidelines for File Format Policies Compliance
 
