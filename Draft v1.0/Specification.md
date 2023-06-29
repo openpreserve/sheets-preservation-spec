@@ -156,7 +156,7 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
 | STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
-| STATIC_3 | Sheets | The file **MUST** have each sheet exported to a single file named consistently with the sheet's name and a file extension consistent with the converted format. |
+| STATIC_3 | Sheets | The file **MUST** have each sheet exported to a single file named consistently with the sheet's name and a file extension consistent with the exported format. |
 | STATIC_4 | Truncated cells | The file **MUST NOT** have any truncated cells. |
 | STATIC_5 | Formulas | The file **MUST** have any formulas printed to a static file named “Data”. |
 | STATIC_6 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
