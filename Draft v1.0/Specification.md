@@ -142,9 +142,9 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | CSV_1 | CSV file format | The file **MUST** comply with the specification “Common Format and MIME Type for Comma-Separated Values (CSV) Files, RFC 4180”. |
 | CSV_2 | Extension | The file **MUST** have extension “.csv”. |
-| CSV_3 | Sheets | The file **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
-| CSV_4 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
-| CSV_5 | Metadata | The file **MAY** have metadata in the file’s properties. |
+| CSV_3 | Sheets | The file **MUST** have each sheet exported to a single file. |
+| CSV_4 | Metadata | The file **MAY** have metadata in the file’s properties. |
+| CSV_5 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
 ### 4.4 Static File Formats
 
@@ -159,8 +159,8 @@ The following table describes the requirements for data quality, when preserving
 | --- | --- | --- |
 | STATIC_1 | File format | The file **MUST** comply with one of these file format specifications.<ul><li>JPEG-2000</li><li>PDF/A</li><li>PNG</li><li>TIFF</li></ul> |
 | STATIC_2 | Extension | The file **MUST** have one of these extensions.<ul><li>“.jp2”</li><li>“.pdf”</li><li>“.png”</li><li>“.tif” or “.tiff”</li></ul> |
-| STATIC_3 | Sheets | The spreadsheet **MUST** have each sheet converted to an independent file named “Sheet1”, “Sheet2” etc. |
-| STATIC_4 | Truncated cells | Any truncated cells **MUST NOT** have text wrap. |
+| STATIC_3 | Sheets | The file **MUST** have each sheet exported to a single file. |
+| STATIC_4 | Truncated cells | The file **MUST NOT** have any truncated cells. |
 | STATIC_5 | Formulas | The file **MUST** have any formulas printed to a static file named “Data”. |
 | STATIC_6 | Metadata | The file **MAY** have metadata in the file’s properties. |
 | STATIC_7 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
@@ -228,7 +228,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | --- | --- |
 | CSV_1 | File format compliance should be validated using a tool, since the manual inspection of each property is an unfeasible task for any human. |
 | CSV_2 | Extension should be lowercase. |
-| CSV_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. The name of the sheet must be given “Sheet1.csv”, “Sheet2.csv” etc. |
+| CSV_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. |
 | CSV_4 | The file format of the graphical material should be any appropriate image file format, your organisation already has a file format policy for, or a new file format policy should be created. |
 | CSV_5 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
 
@@ -242,7 +242,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | --- | --- |
 | STATIC_1 | You must choose one of these file formats to preserve a static representation of the spreadsheet in: JPEG-2000, PDF/A, PNG or TIFF file formats. A wide range of other image file formats exists, but these are typically not used for preservation of data, unless the data was originally created in the file format.<br><br>This specification limits the number of possible file formats to use for preserving a static representation of the spreadsheet, because it is necessary to specify exact file formats, otherwise it is not possible to validate the file format. Simply stating that “your organisation must use any static file format, that your organisation has a file format policy for” is not sufficient, because it is not feasible for software validation workflows to universally validate any possible static file format. |
 | STATIC_2 | Extension should be lowercase. |
-| STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. It is up to your organisation to determine if sheets should be split into multiple export files, or if you combine them into a single multipage file. When using a single multipage file, each page must have the name of the sheet in it. This specification does not recommend one approach over the other, and if your organisation does not have any preference, you may allow both approaches. |
+| STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. |
 | STATIC_4 | Before exporting, you must applying text wrapping to all cells of the sheet, otherwise truncated cells with information will result in information loss, since this information will be hidden behind the proceeding column’s cell, if this cell contains information. |
 | STATIC_5 | The new static file representation of the formulas should have three columns in row 1 with the following information:<ul><li>*Column 1:* Sheet name</li><li>*Column 2:* Cell reference</li><li>*Column 3:* Formula</li></ul> |
 | STATIC_6 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
