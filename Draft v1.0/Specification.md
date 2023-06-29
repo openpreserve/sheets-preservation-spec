@@ -22,17 +22,19 @@
     * [5.2 OfficeOpen XML SpreadsheetML](#52-office-open-xml-spreadsheetml)
     * [5.3 Mark-up Languages](#53-mark-up-languages)
     * [5.4 Static File Formats](#54-static-file-formats)
-* [6 Example Spreadsheets Software](#6-example-spreadsheets-software)
-    * [6.1 Manual XML Editing](#61-manual-xml-editing)
-    * [6.2 Programmatic Conversion and Data Manipulation](#62-programmatic-conversion-and-data-manipulation)
-    * [6.3 Comparison](#63-comparison)
-    * [6.4 Validation](#64-validation)
-    * [6.5 Editing and Rendering](#65-editing-and-rendering)
-* [7 Glossary](#7-glossary)
-* [8 References](#8-references)
-* [9 Postface](#9-postface)
-    * [9.1 Authors](#91-authors)
-    * [9.2 Acknowledgments](#92-acknowledgments)
+* [6 Metadata Preservation Scheme](#6-metadata-preservation-scheme)
+    * [6.1 Metadata Recommendations](#61-metadata-recommendations)
+* [7 Example Spreadsheets Software](#7-example-spreadsheets-software)
+    * [7.1 Manual XML Editing](#71-manual-xml-editing)
+    * [7.2 Programmatic Conversion and Data Manipulation](#72-programmatic-conversion-and-data-manipulation)
+    * [7.3 Comparison](#73-comparison)
+    * [7.4 Validation](#74-validation)
+    * [7.5 Editing and Rendering](#75-editing-and-rendering)
+* [8 Glossary](#8-glossary)
+* [9 References](#9-references)
+* [10 Postface](#10-postface)
+    * [10.1 Authors](#101-authors)
+    * [10.2 Acknowledgments](#102-acknowledgments)
 
 ## 1 Introduction
 
@@ -124,7 +126,7 @@ The following table describes the requirements for data quality, when preserving
 | OOXML_9 | Absolute filepath | The file **SHOULD NOT** have absolute filepath to local file system in the XML attribute “x15ac:absPath” in “workbook.xml”. |
 | OOXML_10 | Final | The file **SHOULD** have “final” mark. |
 | OOXML_11 | Printer settings | The file **MAY** have printer settings files in the "printerSettings" folder. |
-| OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
+| OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties. |
 | OOXML_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
 ### 4.3 Mark-up Languages
@@ -226,6 +228,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | CSV_2 | Extension should be lowercase. |
 | CSV_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. |
 | CSV_4 | The file format of the graphical material should be any appropriate image file format, your organisation already has a file format policy for, or a new file format policy should be created. |
+| CSV_5 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
 
 ### 5.4 Static File Formats
 
@@ -240,9 +243,38 @@ The following table gives guidelines for how to comply with the requirements in 
 | STATIC_3 | It is necessary to preserve each sheet in a spreadsheet, therefore you must make sure to export each sheet manually, or if applying a programmatic solution to loop all the sheets for exporting. |
 | STATIC_4 | Before exporting, you must applying text wrapping to all cells of the sheet, otherwise truncated cells with information will result in information loss, since this information will be hidden behind the proceeding column’s cell, if this cell contains information. |
 | STATIC_5 | The new static file representation of the formulas should have three columns in row 1 with the following information:<ul><li>*Column 1:* Sheet name</li><li>*Column 2:* Cell reference</li><li>*Column 3:* Formula</li></ul> |
-| STATIC_6 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
+| STATIC_6 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
+| STATIC_7 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
 
-## 6 Example Spreadsheets Software
+## 6 Metadata Preservation Scheme
+
+This specification defines a preservation scheme for the metadata in a spreadsheet or metadata related to altering the content of a spreadsheet.
+
+Spreadsheets can contain metadata such as (original) filename, title, author and creation date, or have associated metadata about the context of or events related to the spreadsheet, Spreadsheet metadata should be preserved when considered a significant property. It is up to your organization to determine the best approach and metadata standard for preserving such metadata. Metadata that is considered an artifact may be removed.
+
+The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets. It is up to your organisation to determine the best approach and metadata standard for capturing the recommended metadata.
+
+###  6.1 Metadata Recommendations
+
+The following table recommends which metadata should be preserved and in which circumstances.
+
+**Table 9. Metadata that may be preserved.**
+
+| Relevant IDs | Name | Description | Circumstance |
+| --- | --- | --- | --- |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Filename | The filename of the spreadsheet. | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creator | The creator of the spreadsheet in the file properties. | If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Creation date | The creation date of the spreadsheet in the file properties. | Every time |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Title | The title of the spreadsheet in the file properties.| If value exist |
+| ODS_9, OOXML_12, CSV_5, STATIC_6 | Category | The categories of the spreadsheet in the file properties. | If value exist |
+| CSV_3, STATIC_3 | Sheets | The names of all sheets. | Every time |
+| ODS_4, OOXML_5 | External references | Any external reference to data e.g. data source, cell reference, RealTimeData. The cell position of the external reference should be preserved. Recommendations for the following types of content:<br>- Data sources: The database name, description and type should be preserved<br>- External cell references: The formula should be preserved.<br>- RealTimeData: The formula should be preserved.<br>- External OLE objects: The target and content type should be preserved. | If removed |
+| ODS_5, OOXML_6 | Embedded objects | Any embedded object that has been removed. The cell position of the embedded object should be preserved. The content type should be preserved. | If removed |
+| STATIC_6 | Formulas | Any formulas that has been removed from the spreadsheet. The cell position of the formula should be preserved. | Every time |
+| ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. The entire macro code should be preserved. The name of the macro should be preserved. | If removed |
+| ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. The cell position of the hyperlink should be preserved. | Every time |
+
+## 7 Example Spreadsheets Software
 
 This section is a collation of existing, example software for
 * editing,
@@ -257,18 +289,18 @@ This collation of information should not be viewed as an endorsement or recommen
 
 The following sub sections provide tables of example software covering different purposes.
 
-### 6.1 Manual XML Editing
+### 7.1 Manual XML Editing
 
-**Table 9. List of software for manual editing of spreadsheets.**
+**Table 10. List of software for manual editing of spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
 | OOXML Tools | Chrome extension | Chrome | Free to use |
 | OOXML Viewer | Visual Studio Code extension | Linux, macOS, Windows | MIT |
 
-### 6.2 Programmatic Conversion and Data Manipulation
+### 7.2 Programmatic Conversion and Data Manipulation
 
-**Table 10. Software for programmatic conversion and data manipulation of spreadsheets.**
+**Table 11. Software for programmatic conversion and data manipulation of spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -287,9 +319,9 @@ The following sub sections provide tables of example software covering different
 | Spire.XLS | **Input/Output:** CSV, HTML, ODS, XLS, XLSB, XLSM, XLSX<br>**Output only:** JPEG, OFD, PDF, PNG, PostScript, SVG, TXT, XML, UOS, XPS | Android via Java, C++, Java, .Net | Commercial |
 | Syncfusion | **Input/Output:** CSV, Excel 2003, JSON, TSV, XLS, XLT, XLSM, XLSX, XLTM and XLTX<br>**Output only:** BMP, HTML, JPEG, ODS, PDF and PNG | .Net | Commercial |
 
-### 6.3 Comparison
+### 7.3 Comparison
 
-**Table 11. Software for comparing spreadsheets.**
+**Table 12. Software for comparing spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -300,9 +332,9 @@ The following sub sections provide tables of example software covering different
 | Spreadsheets Complexity Analyser | Java application for bulk extraction of spreadsheet properties and assessing the complexity of the files. | Linux, macOS, Windows | Free to use |
 | XL Comparator | Compare the content of specific columns of two spreadsheet files (Excel and CSV) online. | Browser | Free to use |
 
-### 6.4 Validation
+### 7.4 Validation
 
-**Table 12. Software for validating spreadsheets.**
+**Table 13. Software for validating spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -312,9 +344,9 @@ The following sub sections provide tables of example software covering different
 | OOXML Validator | Both a Visual Studio Code extension and a CLI tool is available. | Linux, macOS, Windows | MIT |
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
-### 6.5 Editing and Rendering
+### 7.5 Editing and Rendering
 
-**Table 13. Software for editing and rendering spreadsheets.**
+**Table 14. Software for editing and rendering spreadsheets.**
 
 | Name | Description | Prerequisites | Licence |
 | --- | --- | --- | --- |
@@ -327,11 +359,11 @@ The following sub sections provide tables of example software covering different
 | Microsoft Excel | The application uses Office Open XML file formats by default but you can also open and edit OpenDocument file formats. | Browser, macOS, Windows | Commercial |
 | ONLYOFFICE Spreadsheet Editor | The application uses Office Open XML file formats by default but you can also open and edit OpenDocument file formats. | Android, browser, iOS, Linux, macOS, Windows | Free to use |
 
-## 7 Glossary
+## 8 Glossary
 
 Table with terms used in the specification.
 
-**Table 14. Glossary**
+**Table 15. Glossary**
 
 | Term | Description |
 | --- | --- |
@@ -364,7 +396,7 @@ Table with terms used in the specification.
 | **Static file format** | A static file format is typically an image file format or the PDF file format, which editable files are converted to. This may result in loss of significant properties and hence data quality. |
 | **Validation** | Validation is the act of confirming something, and in this context a spreadsheet, conforms to the regulations specified in a document, typically referred to as a standard. Validation results in either an approval or a disapproval of any data property or attribute according to a chosen conformance level.<br><br>Validation processes should be supported by software to automate the process, but validation may involve manual inspection of the data. |
 
-## 8 References
+## 9 References
 
 The following is a complete list of references used in the specification.
 
@@ -395,15 +427,15 @@ URL: https://www.ietf.org/rfc/rfc4180.txt
 *The Significant Properties of Spreadsheets*. 2021. Open Preservation Foundation, Archives Interest Group.
 URL: https://zenodo.org/record/5468116#.Y_YMmXbMKUk
 
-## 9 Postface
+## 10 Postface
 
 The following includes information about the authors and other publication info.
 
-### 9.1 Authors
+### 10.1 Authors
 
 Names of the persons, who wrote the first version of the specification.
 
-**Table 15. Authors of this specification**
+**Table 16. Authors of this specification**
 
 | Author | Organisation |
 | --- | --- |
