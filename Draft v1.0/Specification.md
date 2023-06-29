@@ -252,6 +252,8 @@ The following table gives guidelines for how to comply with the requirements in 
 
 This specification defines a preservation scheme for the metadata in a spreadsheet or metadata related to altering the content of a spreadsheet.
 
+Spreadsheets can contain metadata such as (original) filename, title, author and creation date, or have associated metadata about the context of or events related to the spreadsheet, Spreadsheet metadata should be preserved when considered a significant property. It is up to your organization to determine the best approach and metadata standard for preserving such metadata. Metadata that is considered an artifact may be removed.
+
 The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets. It is up to your organisation to determine the best approach and metadata standard for capturing the recommended metadata.
 
 ###  6.1 Metadata Recommendations
