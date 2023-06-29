@@ -104,7 +104,7 @@ The following table describes the requirements for data quality when preserving 
 | ODS_10 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
 | ODS_11 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 | ODS_12 | Preview image | The file **MAY** have a preview image. |
-| ODS_13 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813) |
+| ODS_13 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813). This is to ensure file format identification tools can accurately identify the file. |
 
 ### 4.2 Office Open XML SpreadsheetML
 
