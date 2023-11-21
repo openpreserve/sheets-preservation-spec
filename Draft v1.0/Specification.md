@@ -1,69 +1,36 @@
-![Open Preservation Foundation logo](https://openpreservation.org/wp-content/uploads/2023/06/Untitled-design.png)
+# Spreadsheets Preservation Specification
 
-# OPF Spreadsheets Preservation Specification
-
-**Draft v1.0, 2023**
+**Draft v1.8, November 2023**
 
 ## Table of Contents
 
-* [1 Introduction](#1-introduction)
-* [2 Declarations](#2-declarations)
-    * [2.1 Aim](#21-aim)
-    * [2.2 Scope](#22-scope)
-    * [2.3 Licence](#23-licence)
-* [3 Appraisal and Migration Paths](#3-appraisal-and-migration-paths)
-* [4 File Format Policies](#4-file-format-policies)
-    * [4.1 OpenDocument Spreadsheets](#41-opendocument-spreadsheets)
-    * [4.2 OfficeOpen XML SpreadsheetML](#42-office-open-xml-spreadsheetml)
-    * [4.3 Mark-up Languages](#43-mark-up-languages)
-    * [4.4 Static File Formats](#44-static-file-formats)
-* [5 Guidelines for File Format Policies Compliance](#5-guidelines-for-file-format-policies-compliance)
-    * [5.1 OpenDocument Spreadsheets](#51-opendocument-spreadsheets)
-    * [5.2 OfficeOpen XML SpreadsheetML](#52-office-open-xml-spreadsheetml)
-    * [5.3 Mark-up Languages](#53-mark-up-languages)
-    * [5.4 Static File Formats](#54-static-file-formats)
-* [6 Metadata Preservation Scheme](#6-metadata-preservation-scheme)
-    * [6.1 Metadata Recommendations](#61-metadata-recommendations)
-* [7 Example Spreadsheets Software](#7-example-spreadsheets-software)
-    * [7.1 Manual XML Editing](#71-manual-xml-editing)
-    * [7.2 Programmatic Conversion and Data Manipulation](#72-programmatic-conversion-and-data-manipulation)
-    * [7.3 Comparison](#73-comparison)
-    * [7.4 Validation](#74-validation)
-    * [7.5 Editing and Rendering](#75-editing-and-rendering)
-* [8 Glossary](#8-glossary)
-* [9 References](#9-references)
-* [10 Postface](#10-postface)
-    * [10.1 Authors](#101-authors)
-    * [10.2 Acknowledgments](#102-acknowledgments)
+## Introduction
 
-## 1 Introduction
+This document describes the considerations to make when digitally preserving data created in a spreadsheet file format.
+This document specifies the usage of ODF 1.3 as the chosen format for the archiving of spreadsheets.
+See <https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part1-introduction/OpenDocument-v1.3-os-part1-introduction.html>
 
-This document describes the considerations to make when digitally preserving data created in a spreadsheet file format (i.e. .xlsx, .numbers, .ods).
-
-The document is formalized as a specification to be used in Archival Information Packages (AIP), ideally in parallel with bit preservation of the original data. The migration of spreadsheet data should not be conducted prior to appraisal and technical analysis to ensure data loss is reduced to a minimum and any incurred is acceptable within your organisation.
+The document is formalized as a specification to be used in Archival Information Packages (AIP), ideally in parallel with bit preservation of the original data. The migration of spreadsheet data should not be conducted prior to appraisal and technical analysis to ensure data loss is reduced to a minimum and any incurred is acceptable within Rigsarkivet.
 
 The specification should be supported by software tools to automatically process the conversion and validation of spreadsheets to comply with this specification.
 
-This specification is released and maintained by [Open Preservation Foundation](https://openpreservation.org/).
+## Declarations
 
-## 2 Declarations
+### Aim
 
-### 2.1 Aim
+The specification is intended to define a concise and general approach to the testing of data saved in spreadsheet file formats.
+Scope
 
-The specification is intended to define a concise and general approach to the preservation of data saved in spreadsheet file formats.
-
-The specification defines recommended conversion paths to select file formats in order to reduce the probability of technological obsolescence and make your collections more manageable.
-
-### 2.2 Scope
+### Scope
 
 The specification defines file formats and data quality suitable for an Archival Information Package (AIP). The specification may be adopted by any preservation institution, which ingests spreadsheets and maintains a migration strategy.
 
-### 2.3 Licence
+### Licence
 
 The specification is released under Creative Commons Attribution-ShareAlike 4.0 International Public Licence.
 You are not free to release any specification which uses the Open Preservation Foundation name or branding. The rights to the Open Preservation Foundation name and branding belongs to the Open Preservation Foundation.
 
-## 3 Appraisal and Migration Paths
+## Appraisal and Migration Paths
 
 If a file format is not covered in the section “4 File Format Policies”, then this file format is not considered suitable as an AIP file format. In the case of conversion using sections "4.3 Mark-up languages" and section "4.4 Static File Formats", an appraisal of the significant properties must be made prior to conversion to assess and document the possible data loss.
 
@@ -71,44 +38,92 @@ As mentioned in “2.2 Scope”, this specification does not specify which file 
 
 The original master copy may be corrupt or password protected, and hence a migration copy for archival storage cannot be created. It is up to the receiving organisation to appraise, whether these master copies should be preserved or destroyed.
 
-## 4 File Format Policies
+## File Format Policies
 
-Each file format policy has a table with:
-* ID is a unique identifier for the requirement
-* Name is a short title for the requirement
-* Description is the detailed explanation of the requirement including the level of conformance
-* Cardinality is the detailing of occurrences of the requirement
+There are two classes of checks defined: Conformance and Attributes as follows:
 
-The file format policies must be validated in accordance with the following levels of requirements adopted from Key words for use in RFCs to Indicate Requirement Levels (Bradner, 1997):
+| Type |Description |
+| --- | --- |
+| Conformance | Checks are required to ensure the spreadsheet is well formed as per the ODF 1.3 specification.<br/>Only ODF_2 below comprises of this type of check. This is itself is formed from other multiple checks taken directory from the ODF 1.3 standard. |
+| Attributes | We also need to know the existence of special properties such as hyperlinks, embedded documents, formulas and macros.<br/>Different organizations will permit different attributes. For example, Rigsarkivet do not allow the archiving of Microsoft word documents at present but another archive might. Hence, if an embedded document is found then we need to know its name, type and where it can be found in the spreadsheet.<br/>Note that these items may well be “compliant” as per ODF 1.3 but we may not permit their inclusion. |
+
+The importance of this division is that items in the “conformance” section must always be upheld whilst the “Attributes” are the choice of Rigsarkivet and may not be true for another archive. This suggests that it may be possible to use a standard tool for conformance checking and develop a second “attribute” tool only for Rigsarkivet rules.
+
+The normal standard for evaluating file format policies is usually done in accordance 
+with the following levels of requirements adopted from Key words for use in RFCs to Indicate Requirement Levels (Bradner, 1997):
+
 * ERROR is equal to **MUST**/**MUST NOT** conformance
 * WARNING is equal to **SHOULD**/**SHOULD NOT** conformance
 * INFO is equal to **MAY** conformance
 
-The following subsections cover each file format policy.
+### OpenDocument Spreadsheets
 
-### 4.1 OpenDocument Spreadsheets
+#### Requirements
 
-The following table describes the requirements for data quality when preserving spreadsheets in OpenDocument Spreadsheets file format.
-
-**Table 1. OpenDocument Spreadsheets requirements**
+This specification defines the file format policies. The policies do not specify which tools to use to obtain compliance with the file format policies.
 
 | ID | Name | Description |
 | --- | --- | --- |
 | ODS_1 | Password protection | The file **MUST NOT** have read or write password protection. |
-| ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”. |
-| ODS_3 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813). |
+| ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”.<br/>Note that an ODF 1.3 extended package is not permitted. This is in fact the condition of ODF_10 |
+| ODS_3 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813).<br/>A MIME type declaration is required in the first line of the file "mimetype" and an entry in the file "\META-INF\manifest.xml" |
 | ODS_4 | Extension & MIME type | The file **MUST** have one of the following matching extension and MIME type pairs:<ul><li>Extension: ".fods", MIME type: "application/vnd.oasis.opendocument.spreadsheet"</li><li>Extension: ".ods", MIME type: "application/vnd.oasis.opendocument.spreadsheet"</li><li>Extension: ".ots", MIME type: "application/vnd.oasis.opendocument.spreadsheet-template"</li></ul> |
-| ODS_5 | External data | The file **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. |
-| ODS_6 | Embedded objects | The file **MUST NOT** have any embedded objects, which are in violation of your organisation’s file format policies. |
-| ODS_7 | Content | The file **SHOULD** have cell values or objects. |
-| ODS_8 | Macros | The file **SHOULD NOT** have any macros. |
-| ODS_9 | Fonts | The file **SHOULD** have any used fonts embedded. |
-| ODS_10 | Settings file |The file **MAY** have the "settings.xml" file. |
-| ODS_11 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties in “meta.xml”. |
-| ODS_12 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
-| ODS_13 | Preview image | The file **MAY** have a preview image. |
+| ODS_5 | External data | The package **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects.<br>Any external data references such as data connections, RTD functions, cell references or objects **MUST** be removed, however the calculated cell value **MUST** be preserved. |
+| ODS_6 | Embedded objects | If the package contains any embedded files then they **MUST** be one of the acceptable formats.<br>The  list of permitted file formats is:<ul><li>TIFF (.tiff) for regular office documents in the form of text, spreadsheets and images</li><li>JPEG2000 (.jp2) for large drawings, maps and photos</li><li>MP3 (.mp3) for audio files</li><li>WAV (.wav) for audio files where high quality is important</li><li>MPEG2 (.mpg) for video files</li><li>MPEG4 (.mpg) for video files</li><li>ODF 1.3 spreadsheet format (.ods)</li></ul> |
+| ODS_7 | Content | The package have values or objects in at least one cell.<br/>It is quite possible that some cell values in a spreadsheet are missing.  This is not considered an error. |
+| ODS_8 | Macros | The package **MUST NOT** contain any macros. |
+| ODS_9 | Signatures | The package **MUST NOT** contain any digital signatures. |
+| ODS_10 | Sub-documents |The package must not contain any sub-documents. |
 
-### 4.2 Office Open XML SpreadsheetML
+### ODF Conformance
+
+Note that we are testing for conformance to ODF 1.3 See <https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part1-introduction/OpenDocument-v1.3-os-part1-introduction.html>.
+
+The items given below are easily recognizable from this ODF 1.3 standard. This does not include ODF extended package format, encryption, digital signatures or sub documents.
+
+#### Package
+
+OpenDocument defines a package file to store the XML content of a document as separate parts together with associated binary data as file entries in a single package file. These file entries may be compressed to further reduce the storage taken by the package. This package is a Zip file. OpenDocument Packages impose additional structure on the Zip file to accomplish the representation of OpenDocument Format documents.
+
+The definitions here come from the ODF standard. Note that where shall/should is used then we mean this to mean **MUST**.
+
+| Ref | Description |
+|-----|-------------|
+| PKG-1 | It shall be a Zip file as defined in PKWARE Inc. Zip APPNOTE Version 6.2.0, <http://www.pkware.com/support/application-note-archives>, 2004
+| PKG-2 | All files contained in the Zip file shall be non compressed (STORED) or compressed using the “deflate” (DEFLATED) algorithm |
+| PKG-3 | It shall contain a file “META-INF/manifest.xml” |
+| PKG-4 | It should contain a file “mimetype”. |
+| PKG-5 | It shall not contain other files whose relative path begins with “META-INF/” other than manifest.xml. This is a property of extend packages which is not permitted. |
+| PKG-6 | manifest.xml  file shall be well formed file in accordance with [XML-1.0] |
+| PKG-7 | Unless a document is encrypted, package producers should generate a preview image of the document that is contained in the package. It should be a representation of the first page, first sheet, etc. of the document. For maximum re-usability of the preview images they shall be generated without any effects, surrounding frames, or borders. The preview image shall be contained in a file named “Thumbnails/thumbnail.png”. |
+
+#### Manifest
+
+All OpenDocument packages shall contain a file named “META-INF/manifest.xml”. This file is the OpenDocument package manifest. The manifest provides:
+
+* A list of all of the files in the package (except those specifically excluded from the manifest).
+* The MIME media type of each file in the package.
+* If a file is stored in the file data in encrypted form, the manifest provides information required to decrypt the file correctly when the encryption key is also supplied.
+
+| Ref | Description |
+|-----|-------------|
+| MAN-1 | For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
+| MAN-2 | The file shall not contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself or the “mimetype” file. |
+| MAN-3 | The “META-INF/manifest.xml” file should contain a <manifest:file-entry> element whose manifest:full-path attribute has the value "/". This element specifies information regarding the document stored in the root of the package. This entry shall exist if the package contains a file "mimetype” |
+
+#### MIME Media Type
+
+If a MIME media type for a document exists, then an OpenDocument package should contain a file with name “mimetype”.
+
+| Ref | Description |
+|-----|-------------|
+| MIM-1 | The “mimetype” file shall be the first file of the zip file. |
+| MIM-2 | It shall not be compressed. |
+| MIM-3 | It shall not use an ‘Extra field’ in the header. See <https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#localheader>. |
+| MIM-4 | If the file named “META-INF/manifest.xml” contains a <manifest:file-entry> element whose manifest:full-path attribute has the value "/", then a "mimetype" file shall exist, and the content of the “mimetype” file shall be equal to  “application/vnd.oasis.opendocument.spreadsheet”. |
+| MIM-5 | The content of this file shall be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
+
+### Office Open XML SpreadsheetML
 
 The following table describes the requirements for data quality, when preserving spreadsheets in Office Open XML SpreadsheetML file format.
 
@@ -130,7 +145,7 @@ The following table describes the requirements for data quality, when preserving
 | OOXML_12 | Metadata | The file **MAY** have metadata in the file’s properties or any user defined custom properties. |
 | OOXML_13 | Cell hyperlinks | The file **MAY** have cell hyperlinks. |
 
-### 4.3 Mark-up Languages
+### Mark-up Languages
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a text-based mark-up language file format.
 
@@ -147,7 +162,7 @@ The following table describes the requirements for data quality, when preserving
 | CSV_4 | Metadata | The file **MAY** have metadata in the file’s properties. |
 | CSV_5 | Graphical material | The file **MAY** have any graphical material i.e. images, charts, diagrams, shapes extracted as independent files named “Image1”, “Image2” etc. |
 
-### 4.4 Static File Formats
+### Static File Formats
 
 The following table describes the requirements for data quality, when preserving spreadsheets in a static file format.
 
@@ -166,17 +181,18 @@ The following table describes the requirements for data quality, when preserving
 | STATIC_6 | Metadata | The file **MAY** have metadata in the file’s properties. |
 | STATIC_7 | Cell hyperlinks | The file **SHOULD** have any cell hyperlinks printed to a static file named “Data”. |
 
-## 5 Guidelines for File Format Policies Compliance
+## Guidelines for File Format Policies Compliance
 
 This specification includes guidelines on how to comply with the file format policies in section 3. Guidelines are recommended approaches on how to obtain compliance, but many other approaches than specified in these guidelines may exist, especially over time. The guidelines do not specify which tools to use to obtain compliance with the file format policies.
 
 Each file format policy has a guideline with a table containing:
+
 * ID is a unique identifier for the requirement
 * Description is the detailed explanation of the guideline
 
 The following subsections go through each guideline and at the end has a section on considerations related to appraisal and migration paths for spreadsheets.
 
-### 5.1 OpenDocument Spreadsheets
+### OpenDocument Spreadsheets
 
 The following table gives guidelines for how to comply with the requirements in section 4.1.
 
@@ -198,7 +214,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | ODS_12 | Cell hyperlinks are in essence unproblematic to keep in a spreadsheet, but your organisation may want to remove cell hyperlinks, since they reference external information.<br><br>Cell hyperlinks may be opened using an internet archive, if the cell hyperlinks are no longer active.<br><br>Broken (unavailable URL) cell hyperlinks may be checked for upon ingest and reported.<br><br>Cell hyperlinks can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 | ODS_13 | Preview image is a thumbnail image stored in the spreadsheet's zipped path “Thumbnails/thumbnail.png”. The preview image may be used by the operating system as the file's icon in the file browser/manager.<br><br>The preview image should be considered insignificant for preservation, since it may be generated at any given time and serves no essential purpose. It  may be considered an artefact. |
 
-### 5.2 Office Open XML SpreadsheetML
+### Office Open XML SpreadsheetML
 
 The following table gives guidelines for how to comply with the requirements in section 4.2.
 
@@ -220,7 +236,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | OOXML_12 | Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 | OOXML_13 | Cell hyperlinks are in essence unproblematic to keep in a spreadsheet, but your organisation may want to remove cell hyperlinks, since they reference external information.<br><br>Cell hyperlinks may be opened using an internet archive, if the cell hyperlinks are no longer active.<br><br>Broken (unavailable URL) cell hyperlinks may be checked for upon ingest and reported.<br><br>Cell hyperlinks can be saved in a sidecar file or in an associated table, to document their existence before removal. |
 
-### 5.3 Mark-up Languages
+### Mark-up Languages
 
 The following table gives guidelines for how to comply with the requirements in section 4.3.
 
@@ -234,7 +250,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | CSV_4 | The file format of the graphical material should be any appropriate image file format, your organisation already has a file format policy for, or a new file format policy should be created. |
 | CSV_5 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
 
-### 5.4 Static File Formats
+## Static File Formats
 
  The following table gives guidelines for how to comply with the requirements in section 4.4.
 
@@ -250,7 +266,7 @@ The following table gives guidelines for how to comply with the requirements in 
 | STATIC_6 |  Metadata in the file property information such as author, title, category etc. can be misleading if i.e. the document was reused as a template. You may consider removing this information from the file to not mislead any future user of the data.<br><br>Metadata can be saved in a sidecar file or in an associated table, to document their existence if removed. |
 | STATIC_7 | The static file representation of the cell hyperlinks should be shared with the file created in STATIC_5 and have a fourth column appended in row 1 with the following information:<ul><li>*Column 4:* Cell hyperlink</li></ul> |
 
-## 6 Metadata Preservation Scheme
+## Metadata Preservation Scheme
 
 This specification defines a preservation scheme for the metadata in a spreadsheet or metadata related to altering the content of a spreadsheet.
 
@@ -258,7 +274,7 @@ Spreadsheets can contain metadata such as (original) filename, title, author and
 
 The metadata may be preserved in a sidecar file for each spreadsheet or preserved in a database table with metadata for multiple spreadsheets. It is up to your organisation to determine the best approach and metadata standard for capturing the recommended metadata.
 
-###  6.1 Metadata Recommendations
+### Metadata Recommendations
 
 The following table recommends which metadata should be preserved and in which circumstances.
 
@@ -278,9 +294,10 @@ The following table recommends which metadata should be preserved and in which c
 | ODS_7, OOXML_8 | Macros | Any macros that has been removed from the spreadsheet. The entire macro code should be preserved. The name of the macro should be preserved. | If removed |
 | ODS_10, OOXML_13, STATIC_6 | Cell hyperlinks | Any hyperlinks to websites in any cells. The cell position of the hyperlink should be preserved. | Every time |
 
-## 7 Example Spreadsheets Software
+## Example Spreadsheets Software
 
 This section is a collation of existing, example software for
+
 * editing,
 * converting,
 * comparing,
@@ -293,7 +310,7 @@ This collation of information should not be viewed as an endorsement or recommen
 
 The following sub sections provide tables of example software covering different purposes.
 
-### 7.1 Manual XML Editing
+### Manual XML Editing
 
 **Table 10. List of software for manual editing of spreadsheets.**
 
@@ -302,7 +319,7 @@ The following sub sections provide tables of example software covering different
 | OOXML Tools | Chrome extension | Chrome | Free to use |
 | OOXML Viewer | Visual Studio Code extension | Linux, macOS, Windows | MIT |
 
-### 7.2 Programmatic Conversion and Data Manipulation
+### Programmatic Conversion and Data Manipulation
 
 **Table 11. Software for programmatic conversion and data manipulation of spreadsheets.**
 
@@ -323,7 +340,7 @@ The following sub sections provide tables of example software covering different
 | Spire.XLS | **Input/Output:** CSV, HTML, ODS, XLS, XLSB, XLSM, XLSX<br>**Output only:** JPEG, OFD, PDF, PNG, PostScript, SVG, TXT, XML, UOS, XPS | Android via Java, C++, Java, .Net | Commercial |
 | Syncfusion | **Input/Output:** CSV, Excel 2003, JSON, TSV, XLS, XLT, XLSM, XLSX, XLTM and XLTX<br>**Output only:** BMP, HTML, JPEG, ODS, PDF and PNG | .Net | Commercial |
 
-### 7.3 Comparison
+### Comparison
 
 **Table 12. Software for comparing spreadsheets.**
 
@@ -336,7 +353,7 @@ The following sub sections provide tables of example software covering different
 | Spreadsheets Complexity Analyser | Java application for bulk extraction of spreadsheet properties and assessing the complexity of the files. | Linux, macOS, Windows | Free to use |
 | XL Comparator | Compare the content of specific columns of two spreadsheet files (Excel and CSV) online. | Browser | Free to use |
 
-### 7.4 Validation
+### Validation
 
 **Table 13. Software for validating spreadsheets.**
 
@@ -348,7 +365,7 @@ The following sub sections provide tables of example software covering different
 | OOXML Validator | Both a Visual Studio Code extension and a CLI tool is available. | Linux, macOS, Windows | MIT |
 | Open XML SDK | The framework has a validator built-in, which you can use to create your own application for validating OOXML. | .Net | MIT |
 
-### 7.5 Editing and Rendering
+### Editing and Rendering
 
 **Table 14. Software for editing and rendering spreadsheets.**
 
@@ -363,7 +380,7 @@ The following sub sections provide tables of example software covering different
 | Microsoft Excel | The application uses Office Open XML file formats by default but you can also open and edit OpenDocument file formats. | Browser, macOS, Windows | Commercial |
 | ONLYOFFICE Spreadsheet Editor | The application uses Office Open XML file formats by default but you can also open and edit OpenDocument file formats. | Android, browser, iOS, Linux, macOS, Windows | Free to use |
 
-## 8 Glossary
+## Glossary
 
 Table with terms used in the specification.
 
@@ -400,17 +417,18 @@ Table with terms used in the specification.
 | **Static file format** | A static file format is typically an image file format or the PDF file format, which editable files are converted to. This may result in loss of significant properties and hence data quality. |
 | **Validation** | Validation is the act of confirming something, and in this context a spreadsheet, conforms to the regulations specified in a document, typically referred to as a standard. Validation results in either an approval or a disapproval of any data property or attribute according to a chosen conformance level.<br><br>Validation processes should be supported by software to automate the process, but validation may involve manual inspection of the data. |
 
-## 9 References
+## References
 
 The following is a complete list of references used in the specification.
 
 *Creative Commons Attribution-ShareAlike 4.0 International Public License*
-URL: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+URL: <https://creativecommons.org/licenses/by-sa/4.0/legalcode>
 
 Bradner, S. (1997): *Key words for use in RFCs to Indicate Requirement Levels*, Harvard University
-URL: https://www.ietf.org/rfc/rfc2119.txt
+URL: <https://www.ietf.org/rfc/rfc2119.txt>
 
 *Open Document Format for Office Applications (OpenDocument) v1.3*. 2020. OASIS. Parts:
+
 * Part 1: Introduction
 * Part 2: Packages
 * Part 2: Open Document Schema
@@ -418,24 +436,25 @@ URL: https://www.ietf.org/rfc/rfc2119.txt
 * XML/RNG schemas and OWL ontologies
 
 *Office Open XML File Formats*. ISO. Parts:
+
 * ISO/IEC 29500-1:2016 - Part 1: Fundamentals and Markup Language Reference
 * ISO/IEC 29500-2:2021 - Part 2: Open packaging conventions
 * ISO/IEC 29500-3:2015 - Part 3: Markup Compatibility and Extensibility
 * ISO/IEC 29500-4:2016 - Part 4: Transitional Migration Features
 
 *Common Format and MIME Type for Comma-Separated Values (CSV) Files*. RFC 4180. 2005. The Internet Society
-URL: https://www.ietf.org/rfc/rfc4180.txt
+URL: <https://www.ietf.org/rfc/rfc4180.txt>
 
 *The Reference Model for an Open Archival Information System (OAIS)*. 2012. CCSDS Secretariat
 
 *The Significant Properties of Spreadsheets*. 2021. Open Preservation Foundation, Archives Interest Group.
-URL: https://zenodo.org/record/5468116#.Y_YMmXbMKUk
+URL: <https://zenodo.org/record/5468116#.Y_YMmXbMKUk>
 
-## 10 Postface
+## Postface
 
 The following includes information about the authors and other publication info.
 
-### 10.1 Authors
+### Authors
 
 Names of the persons, who wrote the first version of the specification.
 
@@ -447,7 +466,8 @@ Names of the persons, who wrote the first version of the specification.
 | Remco van Veenendaal | National Archives of the Netherlands |
 | Kaido Kivilaan | National Archives of Estonia |
 
-### 9.2 Acknowledgments
+### Acknowledgments
+
 Thanks to Carl Wilson of the Open Preservation Foundation who acted as a reviewer.
 
 This specification draws inspiration from and is a natural by-product of the Open Preservation Foundation’s discontinued Archives Interest Group (AIG), which in the years 2016-21 investigated the significant properties of spreadsheets. The group won the audience award for best poster at the international digital preservation conference iPRES in 2019 and published their work in a final report in 2021, which also was presented as a paper at iPRES the same year.
