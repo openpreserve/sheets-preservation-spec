@@ -108,8 +108,14 @@ All OpenDocument packages shall contain a file named “META-INF/manifest.xml”
 | Ref | Description |
 |-----|-------------|
 | MAN-1 | For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
-| MAN-2 | The file shall not contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself or the “mimetype” file. |
-| MAN-3 | The “META-INF/manifest.xml” file should contain a <manifest:file-entry> element whose manifest:full-path attribute has the value "/". This element specifies information regarding the document stored in the root of the package. This entry shall exist if the package contains a file "mimetype” |
+| MAN-2 | The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself. |
+| MAN-3 | The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “mimetype” file. |
+| MAN-4 | The manifest SHALL contain an entry for every file in the package, manifest file entry %s has no corresponding zip entry. |
+| MAN-5 | An OpenDocument package manifest SHALL contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\" if a mimetype file is present. |
+| MAN-6 | The OpenDocument package manifest NEED NOT contain entries for file paths starting with META-INF/, %s.
+| MAN-7 | An OpenDocument package SHOULD contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\"". |
+| MAN-8 | For directories, the manifest file should contain a <manifest:file-entry> element only if a directory contains a document or a sub document. |
+| MAN-9 | A directory for administrative or convenience purposes, such as a directory that contains various unrelated image files, should not have an entry in the manifest file. |
 
 #### MIME Media Type
 
@@ -120,8 +126,33 @@ If a MIME media type for a document exists, then an OpenDocument package should 
 | MIM-1 | The “mimetype” file shall be the first file of the zip file. |
 | MIM-2 | It shall not be compressed. |
 | MIM-3 | It shall not use an ‘Extra field’ in the header. See <https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#localheader>. |
-| MIM-4 | If the file named “META-INF/manifest.xml” contains a <manifest:file-entry> element whose manifest:full-path attribute has the value "/", then a "mimetype" file shall exist, and the content of the “mimetype” file shall be equal to  “application/vnd.oasis.opendocument.spreadsheet”. |
-| MIM-5 | The content of this file shall be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
+| MIM-4 | An OpenDocument package SHALL contain a mimetype file IF the manifest contains a <manifest:file-entry> element whose manifest:full-path attribute has the value "\". |
+| MIM-5 | An OpenDocument package mimetype file content SHALL be equal to the manifest:media-type attribute of the manifest <manifest:file-entry> element whose manifest:full-path attribute has the value "/q".
+| MIM-6 | The content of this file shall be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
+
+#### XML Content
+
+Much of OpenDocument valdiation is a process of matching package entry filenames to appropriate XML schema. This section details the errors given when XML content is not well formed or does not validate against the appropriate schema. Full details can be found in [Section 2.2 of the ODF specification v1.3 part 3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part3-schema/OpenDocument-v1.3-os-part3-schema.html#a_2_2_1_OpenDocument_Document). The text below is paraphrased from the standard.
+
+Essentially an OpenDocument package SHALL contain at least one of the following files: content.xml and styles.xml. It may contain additional files.
+
+If the document is an OpenDocument package, then the following requirements shall be met for files named content.xml, styles.xml, settings.xml, and meta.xml if present:
+
+* The files shall be well-formed XML documents with respect to the XML 1.0 specification.
+* The XML root elements of the files shall be:
+  * `<office:document-content>`, or `<math:math>` for files named content.xml,
+  * `<office:document-styles>` for files named styles.xml,
+  * `<office:document-meta>` for files named meta.xml,
+  * `<office:document-settings>` for files named settings.xml.
+
+If the XML root element of a file is `<office:document-content>`, `<office:document-styles>`, `<office:document-meta>`, `<office:document-settings>` or `<math:math>`, then the XML file shall be valid with respect to the appropriate schema.
+
+| Ref | Description |
+|-----|-------------|
+| XML-1 | SaxException: `<message>`<br/>This indicates the occurence of an XML parsing error. The error message will be appended to the header and more details given in the sub-message. |
+| XML-2 | Root element of XML file %s, must be %s but found value %s.<br/>This message is triggered when a packages file names and root elements do not comply with the rules in the list above. |
+| XML-3 | Not a well formed XML document. XML parsing exception at line `<x>` and column `y`: `<message>`.<br/>This error is triggered when one of the OpenDocument XML files isn't well formed. This could be considered a parsing error. |
+| XML-4 | Not a valid XML document. Validation exception at line `<x>` and column `<y>`: `<message>`.<br/>This message indicates an XML validation error when the document was checked against the appropriate schema. |
 
 ### Office Open XML SpreadsheetML
 
