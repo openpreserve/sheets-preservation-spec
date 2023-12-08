@@ -1,6 +1,6 @@
 # Spreadsheets Preservation Specification
 
-**Draft v1.8, November 2023**
+**Draft v1.9, December 2023**
 
 ## Table of Contents
 
@@ -37,7 +37,7 @@ There are two classes of checks defined, Validation and Policy as follows:
 * **Validation:** These checks ensure that a spreadsheet is well-formed and valid as per the [ODF 1.3 specification](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part1-introduction/OpenDocument-v1.3-os-part1-introduction.html). The validation process comprises other multiple checks taken directory from the ODF 1.3 standard.
 * **Policy:** These checks are beyond the scope of the ODF specification validation. They flag features/properties of ODF documents that do not comply with an institution's preservation policies. Examples include the use of formula, macros, embedded objects, etc.
 
-The importance of this division is that Validation checks must always be applied, whilst the choice Policy checks is left to individual institutions.
+The importance of this division is that Validation checks MUST always be applied, whilst the choice Policy checks is left to individual institutions.
 
 The normal standard for evaluating file format policies is usually done in accordance with the following levels of requirements adopted from Key words for use in RFCs to Indicate Requirement Levels (Bradner, 1997):
 
@@ -55,21 +55,27 @@ The items given below are easily recognizable from this ODF 1.3 standard. This d
 
 OpenDocument defines a package file to store the XML content of a document as separate parts together with associated binary data as file entries in a single package file. These file entries may be compressed to further reduce the storage taken by the package. This package is a Zip file. OpenDocument Packages impose additional structure on the Zip file to accomplish the representation of OpenDocument Format documents.
 
-The definitions here come from the ODF standard. Note that where shall/should is used then we mean this to mean **MUST**.
+The definitions here come from the OpenDocument specfications that use alternative normative terminology. The table below maps the terms used in the OpenDocument specification to the terms used in this specification, the original wording is retained.
+
+| Error Level | RFC Term | ODF Term |
+|-------------|----------|----------|
+| ERROR | MUST/MUST NOT | SHALL/SHALL NOT |
+| WARNING | SHOULD/SHOULD NOT | SHOULD/SHOULD NOT |
+| ERROR | MAY | MAY |
 
 | Ref | Description |
 |-----|-------------|
-| PKG-1 | An OpenDocument Package be a Zip file as defined in PKWARE Inc. Zip APPNOTE Version 6.2.0, <http://www.pkware.com/support/application-note-archives>, 2004 |
-| PKG-2 | All files contained in the Zip file shall be non compressed (STORED) or compressed using the “deflate” (DEFLATED) algorithm |
+| PKG-1 | An OpenDocument Package SHALL be a Zip file as defined in PKWARE Inc. Zip APPNOTE Version 6.2.0, <http://www.pkware.com/support/application-note-archives>, 2004 |
+| PKG-2 | All files contained in the Zip file SHALL be non compressed (STORED) or compressed using the “deflate” (DEFLATED) algorithm |
 | PKG-3 | An OpenDocument Package SHALL contain a file “META-INF/manifest.xml”. |
-| PKG-4 | It should contain a file “mimetype”. |
-| PKG-5 | It shall not contain other files whose relative path begins with “META-INF/” other than manifest.xml. This is a property of extend packages which is not permitted. |
-| PKG-7 | Unless a document is encrypted, package producers should generate a preview image of the document that is contained in the package. It should be a representation of the first page, first sheet, etc. of the document. For maximum re-usability of the preview images they shall be generated without any effects, surrounding frames, or borders. The preview image shall be contained in a file named “Thumbnails/thumbnail.png”. |
-| PKG-8 | Encrypted file entries shall be flagged as "STORED" rather than "DEFLATED" in the zip file's central directory. |
+| PKG-4 | It SHOULD contain a file “mimetype”. |
+| PKG-5 | It SHALL not contain other files whose relative path begins with “META-INF/” other than manifest.xml. This is a property of extend packages which is not permitted. |
+| PKG-7 | Unless a document is encrypted, package producers SHOULD generate a preview image of the document that is contained in the package. It should be a representation of the first page, first sheet, etc. of the document. For maximum re-usability of the preview images they shall be generated without any effects, surrounding frames, or borders. The preview image shall be contained in a file named “Thumbnails/thumbnail.png”. |
+| PKG-8 | Encrypted file entries SHALL be flagged as "STORED" rather than "DEFLATED" in the zip file's central directory. |
 
 ### Manifest
 
-All OpenDocument Packages shall contain a file named “META-INF/manifest.xml”. This file is the OpenDocument Package manifest. The manifest provides:
+All OpenDocument Packages SHALL contain a file named “META-INF/manifest.xml”. This file is the OpenDocument Package manifest. The manifest provides:
 
 * A list of all of the files in the package (except those specifically excluded from the manifest).
 * The MIME media type of each file in the package.
@@ -77,28 +83,28 @@ All OpenDocument Packages shall contain a file named “META-INF/manifest.xml”
 
 | Ref | Description |
 |-----|-------------|
-| MAN-1 | The manifest SHALL contain an entry for every file in the package. A zip entry has no corresponding manifest file entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
+| MAN-1 | The manifest MUST contain an file entry for every zip entry in the package. A zip entry has no corresponding manifest file entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file SHALL contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
 | MAN-2 | An OpenDocument Package manifest SHALL NOT contain a file entry for itself. The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself. |
 | MAN-3 | An OpenDocument Package manifest SHALL NOT contain a file entry the mimetype file. The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “mimetype” file. |
-| MAN-4 | The manifest SHALL contain an entry for every file in the package. A manifest file entry has no corresponding zip entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file |
+| MAN-4 | An OpenDocument Package's zip archive SHALL contain an zip entry for every file entry in the package's "META-INF/manifest.xml" manifest file. A manifest file entry has no corresponding zip entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file SHALL contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file |
 | MAN-5 | An OpenDocument Package manifest SHALL contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\" if a mimetype file is present. |
 | MAN-6 | The OpenDocument Package manifest NEED NOT contain entries for file paths starting with "META-INF/". |
 | MAN-7 | An OpenDocument Package SHOULD contain a <manifest:file-entry> element whose manifest:full-path attribute has the value "/". |
-| MAN-8 | For directories, the manifest file should contain a <manifest:file-entry> element only if a directory contains a document or a sub document. |
-| MAN-9 | A directory for administrative or convenience purposes, such as a directory that contains various unrelated image files, should not have an entry in the manifest file. |
+| MAN-8 | For directories, the manifest file SHOULD contain a <manifest:file-entry> element only if a directory contains a document or a sub document. |
+| MAN-9 | A directory for administrative or convenience purposes, such as a directory that contains various unrelated image files, SHOULD NOT have an entry in the manifest file. |
 
 ### MIME Media Type
 
-If a MIME media type for a document exists, then an OpenDocument Package should contain a file with name `mimetype`.
+If a MIME media type for a document exists, then an OpenDocument Package SHOULD contain a file with name `mimetype`.
 
 | Ref | Description |
 |-----|-------------|
-| MIM-1 | The `mimetype` file shall be the first file of the zip file. |
-| MIM-2 | It shall not be compressed. |
-| MIM-3 | It shall not use an "Extra field" in the header. See <https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#localheader>. |
+| MIM-1 | The `mimetype` file SHALL be the first file of the zip file. |
+| MIM-2 | It SHALL NOT be compressed. |
+| MIM-3 | It SHALL NOT use an "Extra field" in the header. See <https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#localheader>. |
 | MIM-4 | An OpenDocument Package SHALL contain a mimetype file IF the manifest contains a `<manifest:file-entry>` element whose `manifest:full-path` attribute has the value "\". |
 | MIM-5 | An OpenDocument Package mimetype file content SHALL be equal to the `manifest:media-type` attribute of the manifest `<manifest:file-entry>` element whose manifest:full-path attribute has the value "/".
-| MIM-6 | The content of this file shall be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
+| MIM-6 | The content of this file SHALL be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
 
 ### XML Content
 
@@ -106,23 +112,24 @@ Much of OpenDocument valdiation is a process of matching package entry filenames
 
 Essentially an OpenDocument Package SHALL contain at least one of the following files: content.xml and styles.xml. It may contain additional files.
 
-If the document is an OpenDocument Package, then the following requirements shall be met for files named content.xml, styles.xml, settings.xml, and meta.xml if present:
+If the document is an OpenDocument Package, then the following requirements SHALL be met for files named content.xml, styles.xml, settings.xml, meta.xml, and manifest.xml if present:
 
-* The files shall be well-formed XML documents with respect to the XML 1.0 specification.
-* The XML root elements of the files shall be:
+* The files SHALL be well-formed XML documents with respect to the XML 1.0 specification.
+* The XML root elements of the files SHALL be:
   * `<office:document-content>`, or `<math:math>` for files named content.xml,
   * `<office:document-styles>` for files named styles.xml,
   * `<office:document-meta>` for files named meta.xml,
   * `<office:document-settings>` for files named settings.xml.
+  * `<manifest:manifest>` for files named manifest.xml.
 
-If the XML root element of a file is `<office:document-content>`, `<office:document-styles>`, `<office:document-meta>`, `<office:document-settings>` or `<math:math>`, then the XML file shall be valid with respect to the appropriate schema.
+If the XML root element of a file is `<office:document-content>`, `<office:document-styles>`, `<office:document-meta>`, `<office:document-settings>`, `<math:math>`, or `<manifest:manifest>`, then the XML file SHALL be valid with respect to the appropriate schema.
 
 | Ref | Description |
 |-----|-------------|
-| XML-1 | SaxException: `<message>`<br/>This indicates the occurence of an XML parsing error. The error message will be appended to the header and more details given in the sub-message. |
-| XML-2 | Root element of XML file %s, must be %s but found value %s.<br/>This message is triggered when a packages file names and root elements do not comply with the rules in the list above. |
-| XML-3 | Not a well formed XML document. XML parsing exception at line `<x>` and column `y`: `<message>`.<br/>This error is triggered when one of the OpenDocument XML files isn't well formed. This could be considered a parsing error. |
-| XML-4 | Not a valid XML document. Validation exception at line `<x>` and column `<y>`: `<message>`.<br/>This message indicates an XML validation error when the document was checked against the appropriate schema. |
+| XML-1 | SaxException: `<message>`. This indicates the occurence of an XML parsing error. The error message will be appended to the header and more details given in the sub-message. |
+| XML-2 | Root element of XML file %s, MUST be %s but found value %s. This message is triggered when a packages file names and root elements do not comply with the rules in the list above. |
+| XML-3 | Not a well formed XML document. XML parsing exception at line `<x>` and column `y`: `<message>`. This error is triggered when one of the OpenDocument XML files isn't well formed. This could be considered a parsing error. |
+| XML-4 | Not a valid XML document. Validation exception at line `<x>` and column `<y>`: `<message>`. This message indicates an XML validation error when the document was checked against the appropriate schema. |
 
 ## OpenDocument Spreadsheet Policy Checks
 
@@ -135,8 +142,8 @@ This specification defines the file format policies. The policies do not specify
 | POL_3 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813). A MIME type declaration is required in the first line of the file "mimetype" and an entry in the file "\META-INF\manifest.xml" |
 | POL_4 | Extension & MIME type | The file **MUST** have the matching extension and MIME type pairs. MIME type: application/vnd.oasis.opendocument.spreadsheet", Extension: ".ods". |
 | POL_5 | External data | The package **MAY** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. Any external data references such as data connections, RTD functions, cell references or objects **MAY** be removed, however the calculated cell value **MUST** be preserved. |
-| POL_6 | Embedded objects | Embedded files may be present in the the spreadsheet OpenDocument package. |
-| POL_7 | Content | The package have values or objects in at least one cell. It is quite possible that some cell values in a spreadsheet are missing.  This is not considered an error. |
+| POL_6 | Embedded objects | Embedded files **MAY** be present in the the spreadsheet OpenDocument package. |
+| POL_7 | Content | The package **MUST** have values or objects in at least one cell. It is quite possible that some cell values in a spreadsheet are missing.  This is not considered an error. |
 | POL_8 | Macros | The package **MUST NOT** contain any macros. |
 | POL_9 | Signatures | The package **MUST NOT** contain any digital signatures. |
 
@@ -172,7 +179,7 @@ Table with terms used in the specification.
 | **Data connections** | Data connections in a spreadsheet is a type of connection, which can connect to an external database or file to feed and update cell values. |
 | **Designated community** | *From OAIS:* An identified group of potential Consumers who should be able to understand a particular set of information. The Designated Community may be composed of multiple user communities. A Designated Community is defined by the Archive and this definition may change over time. |
 | **Embedded objects** | An object embedded in the file/package i.e. an image, another spreadsheet or 3D object. |
-| **Encryption** | An ODF document may encrypt some of it's internal file entries using either a password or GPG key. The password or matching key must be supplied to decrypt these entries. |
+| **Encryption** | An ODF document may encrypt some of it's internal file entries using either a password or GPG key. The password or matching key MUST be supplied to decrypt these entries. |
 | **External cell references** | External cell references is a type of cell formula, which fetches data from another spreadsheet. |
 | **External objects** | An object that is linked as an OLE object, but is not embedded into the file/package. |
 | **File format** | *From Digital Preservation Handbook:* A file format is a standard way that information is encoded for storage in a computer file. It tells the computer how to display, print, and process, and save the information. It is dictated by the application program which created the file, and the operating system under which it was created and stored. Some file formats are designed for very particular types of data, others can act as a container for different types. A particular file format is often indicated by a file name extension containing three or four letters that identify the format. |
@@ -183,7 +190,7 @@ Table with terms used in the specification.
 | **Office Open XML (OOXML)** | Office Open XML ECMA- and ISO-standard. |
 | **OpenDocument Spreadsheets (ODS)** | OpenDocument Spreadsheet subset of the OpenDocument ISO-standard. |
 | **RealTimeData functions (RTD)** | RealTimeData functions is a type of cell formula in an OOXML spreadsheet, which can fetch data from a server in a specified interval. |
-| **Sheets** | A spreadsheet must contain at least one sheet but may contain a large number of sheets. Sheets are the “pages” of a spreadsheet, and any cell exists in a sheet. Sheets are the structural wrapper of spreadsheet data. |
+| **Sheets** | A spreadsheet MUST contain at least one sheet but may contain a large number of sheets. Sheets are the “pages” of a spreadsheet, and any cell exists in a sheet. Sheets are the structural wrapper of spreadsheet data. |
 | **Significant properties** | Significant properties are the properties of data, which a designated community has deemed important to preserve for future reuse of data. A significant property is also termed a “Transformational Information Property” in the OAIS. |
 | **Validation** | Validation is the act of confirming something, and in this context a spreadsheet, conforms to the regulations specified in a document, typically referred to as a standard. Validation results in either an approval or a disapproval of any data property or attribute according to a chosen conformance level.<br><br>Validation processes should be supported by software to automate the process, but validation may involve manual inspection of the data. |
 
