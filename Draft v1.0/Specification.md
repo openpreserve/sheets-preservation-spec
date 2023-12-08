@@ -59,17 +59,17 @@ The definitions here come from the ODF standard. Note that where shall/should is
 
 | Ref | Description |
 |-----|-------------|
-| PKG-1 | It shall be a Zip file as defined in PKWARE Inc. Zip APPNOTE Version 6.2.0, <http://www.pkware.com/support/application-note-archives>, 2004
+| PKG-1 | An OpenDocument Package be a Zip file as defined in PKWARE Inc. Zip APPNOTE Version 6.2.0, <http://www.pkware.com/support/application-note-archives>, 2004 |
 | PKG-2 | All files contained in the Zip file shall be non compressed (STORED) or compressed using the “deflate” (DEFLATED) algorithm |
-| PKG-3 | It shall contain a file “META-INF/manifest.xml” |
+| PKG-3 | An OpenDocument Package SHALL contain a file “META-INF/manifest.xml”. |
 | PKG-4 | It should contain a file “mimetype”. |
 | PKG-5 | It shall not contain other files whose relative path begins with “META-INF/” other than manifest.xml. This is a property of extend packages which is not permitted. |
-| PKG-6 | manifest.xml  file shall be well formed file in accordance with [XML-1.0] |
 | PKG-7 | Unless a document is encrypted, package producers should generate a preview image of the document that is contained in the package. It should be a representation of the first page, first sheet, etc. of the document. For maximum re-usability of the preview images they shall be generated without any effects, surrounding frames, or borders. The preview image shall be contained in a file named “Thumbnails/thumbnail.png”. |
+| PKG-8 | Encrypted file entries shall be flagged as "STORED" rather than "DEFLATED" in the zip file's central directory. |
 
 ### Manifest
 
-All OpenDocument packages shall contain a file named “META-INF/manifest.xml”. This file is the OpenDocument package manifest. The manifest provides:
+All OpenDocument Packages shall contain a file named “META-INF/manifest.xml”. This file is the OpenDocument Package manifest. The manifest provides:
 
 * A list of all of the files in the package (except those specifically excluded from the manifest).
 * The MIME media type of each file in the package.
@@ -77,36 +77,36 @@ All OpenDocument packages shall contain a file named “META-INF/manifest.xml”
 
 | Ref | Description |
 |-----|-------------|
-| MAN-1 | For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
-| MAN-2 | The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself. |
-| MAN-3 | The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “mimetype” file. |
-| MAN-4 | The manifest SHALL contain an entry for every file in the package, manifest file entry %s has no corresponding zip entry. |
-| MAN-5 | An OpenDocument package manifest SHALL contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\" if a mimetype file is present. |
-| MAN-6 | The OpenDocument package manifest NEED NOT contain entries for file paths starting with META-INF/, %s.
-| MAN-7 | An OpenDocument package SHOULD contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\"". |
+| MAN-1 | The manifest SHALL contain an entry for every file in the package. A zip entry has no corresponding manifest file entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file. |
+| MAN-2 | An OpenDocument Package manifest SHALL NOT contain a file entry for itself. The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “META-INF/manifest.xml” file itself. |
+| MAN-3 | An OpenDocument Package manifest SHALL NOT contain a file entry the mimetype file. The file SHALL NOT contain <manifest:file-entry> elements whose manifest:full-path attribute value references the “mimetype” file. |
+| MAN-4 | The manifest SHALL contain an entry for every file in the package. A manifest file entry has no corresponding zip entry. For all files contained in a package, with exception of the “mimetype” file and files whose relative path starts with “META-INF/”, the “META-INF/manifest.xml” file shall contain exactly one <manifest:file-entry> element whose manifest:full-path attribute's value references the file |
+| MAN-5 | An OpenDocument Package manifest SHALL contain a <manifest:file-entry> element whose manifest:full-path attribute has the value \"/\" if a mimetype file is present. |
+| MAN-6 | The OpenDocument Package manifest NEED NOT contain entries for file paths starting with "META-INF/". |
+| MAN-7 | An OpenDocument Package SHOULD contain a <manifest:file-entry> element whose manifest:full-path attribute has the value "/". |
 | MAN-8 | For directories, the manifest file should contain a <manifest:file-entry> element only if a directory contains a document or a sub document. |
 | MAN-9 | A directory for administrative or convenience purposes, such as a directory that contains various unrelated image files, should not have an entry in the manifest file. |
 
 ### MIME Media Type
 
-If a MIME media type for a document exists, then an OpenDocument package should contain a file with name `mimetype`.
+If a MIME media type for a document exists, then an OpenDocument Package should contain a file with name `mimetype`.
 
 | Ref | Description |
 |-----|-------------|
 | MIM-1 | The `mimetype` file shall be the first file of the zip file. |
 | MIM-2 | It shall not be compressed. |
 | MIM-3 | It shall not use an "Extra field" in the header. See <https://users.cs.jmu.edu/buchhofp/forensics/formats/pkzip.html#localheader>. |
-| MIM-4 | An OpenDocument package SHALL contain a mimetype file IF the manifest contains a `<manifest:file-entry>` element whose `manifest:full-path` attribute has the value "\". |
-| MIM-5 | An OpenDocument package mimetype file content SHALL be equal to the `manifest:media-type` attribute of the manifest `<manifest:file-entry>` element whose manifest:full-path attribute has the value "/q".
+| MIM-4 | An OpenDocument Package SHALL contain a mimetype file IF the manifest contains a `<manifest:file-entry>` element whose `manifest:full-path` attribute has the value "\". |
+| MIM-5 | An OpenDocument Package mimetype file content SHALL be equal to the `manifest:media-type` attribute of the manifest `<manifest:file-entry>` element whose manifest:full-path attribute has the value "/".
 | MIM-6 | The content of this file shall be the ASCII encoded MIME media type associated with the document. See [RFC6838]. |
 
 ### XML Content
 
 Much of OpenDocument valdiation is a process of matching package entry filenames to appropriate XML schema. This section details the errors given when XML content is not well formed or does not validate against the appropriate schema. Full details can be found in [Section 2.2 of the ODF specification v1.3 part 3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part3-schema/OpenDocument-v1.3-os-part3-schema.html#a_2_2_1_OpenDocument_Document). The text below is paraphrased from the standard.
 
-Essentially an OpenDocument package SHALL contain at least one of the following files: content.xml and styles.xml. It may contain additional files.
+Essentially an OpenDocument Package SHALL contain at least one of the following files: content.xml and styles.xml. It may contain additional files.
 
-If the document is an OpenDocument package, then the following requirements shall be met for files named content.xml, styles.xml, settings.xml, and meta.xml if present:
+If the document is an OpenDocument Package, then the following requirements shall be met for files named content.xml, styles.xml, settings.xml, and meta.xml if present:
 
 * The files shall be well-formed XML documents with respect to the XML 1.0 specification.
 * The XML root elements of the files shall be:
@@ -130,16 +130,15 @@ This specification defines the file format policies. The policies do not specify
 
 | ID | Name | Description |
 | --- | --- | --- |
-| ODS_1 | Encryption | The file **MUST NOT** be encrypted, either using a password or a GPG key. |
-| ODS_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”.<br/>Note that an ODF 1.3 extended package is not permitted. This is in fact the condition of ODF_10 |
-| ODS_3 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813).<br/>A MIME type declaration is required in the first line of the file "mimetype" and an entry in the file "\META-INF\manifest.xml" |
-| ODS_4 | Extension & MIME type | The file **MUST** have one of the following matching extension and MIME type pairs:<ul><li>Extension: ".fods", MIME type: "application/vnd.oasis.opendocument.spreadsheet"</li><li>Extension: ".ods", MIME type: "application/vnd.oasis.opendocument.spreadsheet"</li><li>Extension: ".ots", MIME type: "application/vnd.oasis.opendocument.spreadsheet-template"</li></ul> |
-| ODS_5 | External data | The package **MUST NOT** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects.<br>Any external data references such as data connections, RTD functions, cell references or objects **MUST** be removed, however the calculated cell value **MUST** be preserved. |
-| ODS_6 | Embedded objects | If the package contains any embedded files then they **MUST** be one of the acceptable formats.<br>The  list of permitted file formats is:<ul><li>TIFF (.tiff) for regular office documents in the form of text, spreadsheets and images</li><li>JPEG2000 (.jp2) for large drawings, maps and photos</li><li>MP3 (.mp3) for audio files</li><li>WAV (.wav) for audio files where high quality is important</li><li>MPEG2 (.mpg) for video files</li><li>MPEG4 (.mpg) for video files</li><li>ODF 1.3 spreadsheet format (.ods)</li></ul> |
-| ODS_7 | Content | The package have values or objects in at least one cell.<br/>It is quite possible that some cell values in a spreadsheet are missing.  This is not considered an error. |
-| ODS_8 | Macros | The package **MUST NOT** contain any macros. |
-| ODS_9 | Signatures | The package **MUST NOT** contain any digital signatures. |
-| ODS_10 | Sub-documents |The package must not contain any sub-documents. |
+| POL_1 | Encryption | The file **MUST NOT** be encrypted, either using a password or a GPG key. |
+| POL_2 | Standard compliance | The file **MUST** comply with the standard “OASIS Open Document Format for Office Applications (OpenDocument) v1.3”. Note that an ODF 1.3 extended package is not permitted. |
+| POL_3 | Package mimetype entry | An ODF package **MUST** have a `mimetype` entry as specified in the [Section 3.3 of the ODF specification v1.3](https://docs.oasis-open.org/office/OpenDocument/v1.3/os/part2-packages/OpenDocument-v1.3-os-part2-packages.html#__RefHeading__752809_826425813). A MIME type declaration is required in the first line of the file "mimetype" and an entry in the file "\META-INF\manifest.xml" |
+| POL_4 | Extension & MIME type | The file **MUST** have the matching extension and MIME type pairs. MIME type: application/vnd.oasis.opendocument.spreadsheet", Extension: ".ods". |
+| POL_5 | External data | The package **MAY** have any references to external data. This includes data connections, RealTimeData functions, cell formula references and objects. Any external data references such as data connections, RTD functions, cell references or objects **MAY** be removed, however the calculated cell value **MUST** be preserved. |
+| POL_6 | Embedded objects | Embedded files may be present in the the spreadsheet OpenDocument package. |
+| POL_7 | Content | The package have values or objects in at least one cell. It is quite possible that some cell values in a spreadsheet are missing.  This is not considered an error. |
+| POL_8 | Macros | The package **MUST NOT** contain any macros. |
+| POL_9 | Signatures | The package **MUST NOT** contain any digital signatures. |
 
 ## Appendix A: Editing and Rendering
 
